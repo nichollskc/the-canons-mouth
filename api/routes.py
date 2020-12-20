@@ -1,7 +1,5 @@
 import time
-from flask import Flask
-
-app = Flask(__name__)
+from api import app
 
 @app.route('/time')
 def get_current_time():
