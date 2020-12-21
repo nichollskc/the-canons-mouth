@@ -8,6 +8,17 @@ rule download_file:
     shell:
         "wget -O {output.out} {params.url}"
 
+rule txt_to_jsx:
+    input:
+        txt="texts/{name}.txt",
+    output:
+        js="src/{name}.js"
+    run:
+        import process_texts as pt
+        pt.txt_to_jsx_component(wildcards.name,
+                                input.txt,
+                                output.js)
+
 rule all_texts:
     input:
         expand("texts/{name}.{ext}",

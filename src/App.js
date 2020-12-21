@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import CheckboxContainer from './CheckboxContainer.js';
+import Aeneid from './aeneid.js';
+import Iliad from './iliad.js';
 
 function App() {
       const [currentTime, setCurrentTime] = useState(0);
@@ -30,6 +32,11 @@ function App() {
                    </a>
 
                    <CheckboxContainer />
+
+                   <div>
+                       <Aeneid />
+                       <Iliad />
+                   </div>
 
                 </header>
               </div>
