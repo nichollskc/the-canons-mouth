@@ -1,0 +1,61 @@
+texts:
+  malory1:
+    full_name: "Malory Part 1"
+    urls:
+      txt: "http://www.gutenberg.org/files/1251/1251-0.txt"
+      html: "http://www.gutenberg.org/files/1251/1251-h/1251-h.htm"
+  malory2:
+    full_name: "Malory Part 2"
+    urls:
+      txt: "http://www.gutenberg.org/files/1252/1252-0.txt"
+      html: "http://www.gutenberg.org/files/1252/1252-h/1252-h.htm"
+  shakespeare:
+    full_name: "Shakespeare full works"
+    urls:
+      txt: "http://www.gutenberg.org/files/100/100-0.txt"
+      html: "http://www.gutenberg.org/files/100/100-h/100-h.htm"
+  idylls_king:
+    full_name: "Tennyson Idylls of the King"
+    urls:
+      txt: "http://www.gutenberg.org/files/610/610.txt"
+      html: "http://www.gutenberg.org/files/610/610-h/610-h.htm"
+  faerie_queen:
+    full_name: "Spenser's Faerie Queen"
+    urls:
+      txt: "https://www.gutenberg.org/files/15272/15272.txt"
+      html: "https://www.gutenberg.org/files/15272/15272-h/15272-h.htm"
+  bible:
+    full_name: "King James Bible"
+    urls:
+      txt: "http://www.gutenberg.org/files/10/10.txt"
+      html: "http://www.gutenberg.org/files/10/10-h/10-h.htm"
+  aeneid:
+    full_name: "Dryden's Aeneid"
+    urls:
+      txt: "http://www.gutenberg.org/files/228/228.txt"
+      html: "http://www.gutenberg.org/files/228/228-h/228-h.htm"
+  iliad:
+    full_name: "Pope's Iliad"
+    urls:
+      txt: "https://www.gutenberg.org/files/6130/6130.txt"
+      html: "https://www.gutenberg.org/files/6130/6130-h/6130-h.htm"
+  odyssey:
+    full_name: "Pope's Odyssey"
+    urls:
+      txt: "http://www.gutenberg.org/files/3160/3160.txt"
+      html: "http://www.gutenberg.org/files/3160/3160-h/3160-h.htm"
+  paradise_lost:
+    full_name: "Milton Paradise Lost"
+    urls:
+      txt: "http://www.gutenberg.org/files/20/20.txt"
+      html: "http://www.gutenberg.org/files/20/20-h/20-h.htm"
+  paradise_regained:
+    full_name: "Milton Paradise Regained"
+    urls:
+      txt: "http://www.gutenberg.org/cache/epub/58/pg58.html"
+      html: "http://www.gutenberg.org/cache/epub/58/pg58.html"
+  mabinogion:
+    full_name: "Lady Charlotte Guest's Mabinogion"
+    urls:
+      txt: "https://www.gutenberg.org/files/5160/5160-0.txt"
+      html: "https://www.gutenberg.org/files/5160/5160-h/5160-h.htm"
