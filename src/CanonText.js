@@ -7,7 +7,7 @@ class CanonText extends React.Component {
         super(props);
 
         this.state = {
-            checkedItems: new Map(),
+            checkedItems: new Map(texts.map(i => [i.name, i.startsChecked])),
         }
         this.handleCheckboxChange = this.handleCheckboxChange.bind(this);
     }

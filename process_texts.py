@@ -28,6 +28,7 @@ def write_text_prop_dict_js(config, outfile):
             'full_name': properties['full_name'],
             'checkbox_key': f"checkbox_{text_name}",
             'text': f"@@text_{text_name}@@",
+            'startsChecked': properties['startsChecked'],
         }
         text_array.append(text_dict)
 
