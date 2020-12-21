@@ -1,0 +1,9 @@
+name: spyglass
+channels:
+  - anaconda
+  - bioconda
+  - conda-forge
+dependencies:
+  - snakemake-minimal
+  - python-dotenv
+  - flask
