@@ -32,6 +32,11 @@ class CheckboxContainer extends React.Component {
                         </label>
                     ))
                 }
+                {
+                    checkboxes.map(item => (
+                        <p>{item.name} {this.state.checkedItems.get(item.name) === true && <b>Checked</b>}</p>
+                    ))
+                }
             </React.Fragment>
         );
     }
