@@ -5,7 +5,7 @@ def txt_to_jsx_component(name, txtfile, outfile):
     footer = ["`\n",
               f"const {capitalised} " + "= () => {\n",
                "    return(\n",
-              f"<pre id='{name}'>\n",
+              f"<pre id='{name}' class='canonText'>\n",
                "        {text}\n",
                "</pre>\n",
                ");\n",
