@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import CheckboxContainer from './CheckboxContainer.js';
+import CanonText from './CanonText.js';
 import Aeneid from './aeneid.js';
 import Iliad from './iliad.js';
 
@@ -31,7 +31,7 @@ function App() {
                      Learn React
                    </a>
 
-                   <CheckboxContainer />
+                   <CanonText />
 
                    <div>
                        <Aeneid />
