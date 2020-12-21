@@ -27,6 +27,11 @@ class CanonText extends React.Component {
                            <p>{item.name} {this.state.checkedItems.get(item.name) === true && <b>Checked</b>}</p>
                        ))
                    }
+                   {
+                       checkboxes.map(item => (
+                           <p>{item.name} {this.state.checkedItems.get(item.name) === true && <pre>{item.text}</pre>}</p>
+                       ))
+                   }
             </React.Fragment>
         );
     }
