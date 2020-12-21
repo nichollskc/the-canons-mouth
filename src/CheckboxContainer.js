@@ -8,8 +8,8 @@ class CheckboxContainer extends React.Component {
             <React.Fragment>
                 {
                     this.props.checkboxes.map(item => (
-                        <label key={item.key}>
-                            {item.name}
+                        <label key={item.checkbox_key}>
+                            {item.full_name}
                             <Checkbox name={item.name} checked={this.props.checkedItems.get(item.name)} onChange={this.props.handleCheckboxChange} />
                         </label>
                     ))

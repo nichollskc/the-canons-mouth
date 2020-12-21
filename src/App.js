@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import CanonText from './CanonText.js';
 
@@ -15,26 +14,8 @@ function App() {
       return (
               <div className="App">
                 <header className="App-header">
-                   <img src={logo} className="App-logo" alt="logo" />
-                   <p>
-                       My first app!
-                   </p>
                              <p>The current time is {currentTime}.</p>
-                   <a
-                     className="App-link"
-                     href="https://reactjs.org"
-                     target="_blank"
-                     rel="noopener noreferrer"
-                   >
-                     Learn React
-                   </a>
-
                    <CanonText />
-
-                   <div>
-                       <Aeneid />
-                       <Iliad />
-                   </div>
 
                 </header>
               </div>

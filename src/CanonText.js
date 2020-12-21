@@ -1,6 +1,6 @@
 import React from 'react';
 import CheckboxContainer from './CheckboxContainer.js';
-import checkboxes from './checkboxes';
+import texts from './texts.js';
 
 class CanonText extends React.Component {
     constructor(props) {
@@ -21,15 +21,17 @@ class CanonText extends React.Component {
     render() {
         return(
             <React.Fragment>
-                   <CheckboxContainer checkedItems={this.state.checkedItems} handleCheckboxChange={this.handleCheckboxChange} checkboxes={checkboxes}/>
+                   <CheckboxContainer checkedItems={this.state.checkedItems} handleCheckboxChange={this.handleCheckboxChange} checkboxes={texts}/>
                    {
-                       checkboxes.map(item => (
-                           <p>{item.name} {this.state.checkedItems.get(item.name) === true && <b>Checked</b>}</p>
-                       ))
-                   }
-                   {
-                       checkboxes.map(item => (
-                           <p>{item.name} {this.state.checkedItems.get(item.name) === true && <pre>{item.text}</pre>}</p>
+                       texts.map(item => (
+                           <React.Fragment>
+                           {this.state.checkedItems.get(item.name) === true &&
+                               <div class='canonTextDiv'>
+                                   <h2><a id={item.name}></a>{item.full_name}</h2>
+                                   <pre>{item.text}</pre>
+                               </div>
+                           }
+                           </React.Fragment>
                        ))
                    }
             </React.Fragment>
