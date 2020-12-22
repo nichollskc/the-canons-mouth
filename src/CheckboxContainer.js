@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import Checkbox from './Checkbox';
 
 class CheckboxContainer extends React.Component {
