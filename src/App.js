@@ -14,7 +14,6 @@ function App() {
       return (
               <div className="App">
                 <header className="App-header">
-                             <p>The current time is {currentTime}.</p>
                    <CanonText />
 
                 </header>
