@@ -49,7 +49,7 @@ class CanonText extends React.Component {
                        texts.map(item => (
                            <React.Fragment>
                            {this.state.checkedItems[item.name] === true &&
-                               <div class='canonTextDiv'>
+                               <div class='canonText'>
                                    <h2>{item.full_name}</h2>
                                    <pre>{item.text}</pre>
                                </div>
