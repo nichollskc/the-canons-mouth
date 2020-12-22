@@ -62,7 +62,7 @@ texts:
   paradise_regained:
     full_name: "Milton Paradise Regained"
     urls:
-      txt: "http://www.gutenberg.org/cache/epub/58/pg58.html"
+      txt: "http://www.gutenberg.org/cache/epub/58/pg58.txt"
       html: "http://www.gutenberg.org/cache/epub/58/pg58.html"
     startsChecked: False
   mabinogion:
