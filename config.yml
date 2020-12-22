@@ -22,13 +22,13 @@ texts:
     urls:
       txt: "http://www.gutenberg.org/files/610/610.txt"
       html: "http://www.gutenberg.org/files/610/610-h/610-h.htm"
-    startsChecked: True
+    startsChecked: False
   faerie_queen:
     full_name: "Spenser's Faerie Queen"
     urls:
       txt: "https://www.gutenberg.org/files/15272/15272.txt"
       html: "https://www.gutenberg.org/files/15272/15272-h/15272-h.htm"
-    startsChecked: True
+    startsChecked: False
   bible:
     full_name: "King James Bible"
     urls:
@@ -40,34 +40,34 @@ texts:
     urls:
       txt: "http://www.gutenberg.org/files/228/228.txt"
       html: "http://www.gutenberg.org/files/228/228-h/228-h.htm"
-    startsChecked: True
+    startsChecked: False
   iliad:
     full_name: "Pope's Iliad"
     urls:
       txt: "https://www.gutenberg.org/files/6130/6130.txt"
       html: "https://www.gutenberg.org/files/6130/6130-h/6130-h.htm"
-    startsChecked: True
+    startsChecked: False
   odyssey:
     full_name: "Pope's Odyssey"
     urls:
       txt: "http://www.gutenberg.org/files/3160/3160.txt"
       html: "http://www.gutenberg.org/files/3160/3160-h/3160-h.htm"
-    startsChecked: True
+    startsChecked: False
   paradise_lost:
     full_name: "Milton Paradise Lost"
     urls:
       txt: "http://www.gutenberg.org/files/20/20.txt"
       html: "http://www.gutenberg.org/files/20/20-h/20-h.htm"
-    startsChecked: True
+    startsChecked: False
   paradise_regained:
     full_name: "Milton Paradise Regained"
     urls:
       txt: "http://www.gutenberg.org/cache/epub/58/pg58.html"
       html: "http://www.gutenberg.org/cache/epub/58/pg58.html"
-    startsChecked: True
+    startsChecked: False
   mabinogion:
     full_name: "Lady Charlotte Guest's Mabinogion"
     urls:
       txt: "https://www.gutenberg.org/files/5160/5160-0.txt"
       html: "https://www.gutenberg.org/files/5160/5160-h/5160-h.htm"
-    startsChecked: True
+    startsChecked: False
