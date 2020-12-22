@@ -26,7 +26,8 @@ class CanonText extends React.Component {
     handleCheckboxChange(e) {
         const item = e.target.name;
         const isChecked = e.target.checked;
-        const updatedItems = {...this.state.checkedItems, item: isChecked};
+        const updatedItems = {...this.state.checkedItems};
+        updatedItems[item] = isChecked;
         this.setState({ checkedItems: updatedItems });
     }
 
@@ -49,7 +50,7 @@ class CanonText extends React.Component {
                            <React.Fragment>
                            {this.state.checkedItems[item.name] === true &&
                                <div class='canonTextDiv'>
-                                   <h2><a id={item.name}></a>{item.full_name}</h2>
+                                   <h2>{item.full_name}</h2>
                                    <pre>{item.text}</pre>
                                </div>
                            }
