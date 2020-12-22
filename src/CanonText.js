@@ -42,9 +42,12 @@ class CanonText extends React.Component {
     render() {
         return(
             <React.Fragment>
-                   <button id='allOn' onClick={this.handleAllTextsOn}>Select all</button>
-                   <button id='allOff' onClick={this.handleAllTextsOff}>Deselect all</button>
-                   <CheckboxContainer checkedItems={this.state.checkedItems} handleCheckboxChange={this.handleCheckboxChange} checkboxes={texts}/>
+                   <div id='buttonsDiv'>
+                       <p class='smallFont'>Loading many texts at once can be slow...</p>
+                       <button id='allOn' onClick={this.handleAllTextsOn}>Select all</button>
+                       <button id='allOff' onClick={this.handleAllTextsOff}>Deselect all</button>
+                       <CheckboxContainer checkedItems={this.state.checkedItems} handleCheckboxChange={this.handleCheckboxChange} checkboxes={texts}/>
+                   </div>
                    {
                        texts.map(item => (
                            <React.Fragment>
