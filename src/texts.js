@@ -38,14 +38,14 @@ const texts = [
     "full_name": "Tennyson Idylls of the King",
     "checkbox_key": "checkbox_idylls_king",
     "text": text_idylls_king,
-    "startsChecked": true
+    "startsChecked": false
   },
   {
     "name": "faerie_queen",
     "full_name": "Spenser's Faerie Queen",
     "checkbox_key": "checkbox_faerie_queen",
     "text": text_faerie_queen,
-    "startsChecked": true
+    "startsChecked": false
   },
   {
     "name": "bible",
@@ -59,42 +59,42 @@ const texts = [
     "full_name": "Dryden's Aeneid",
     "checkbox_key": "checkbox_aeneid",
     "text": text_aeneid,
-    "startsChecked": true
+    "startsChecked": false
   },
   {
     "name": "iliad",
     "full_name": "Pope's Iliad",
     "checkbox_key": "checkbox_iliad",
     "text": text_iliad,
-    "startsChecked": true
+    "startsChecked": false
   },
   {
     "name": "odyssey",
     "full_name": "Pope's Odyssey",
     "checkbox_key": "checkbox_odyssey",
     "text": text_odyssey,
-    "startsChecked": true
+    "startsChecked": false
   },
   {
     "name": "paradise_lost",
     "full_name": "Milton Paradise Lost",
     "checkbox_key": "checkbox_paradise_lost",
     "text": text_paradise_lost,
-    "startsChecked": true
+    "startsChecked": false
   },
   {
     "name": "paradise_regained",
     "full_name": "Milton Paradise Regained",
     "checkbox_key": "checkbox_paradise_regained",
     "text": text_paradise_regained,
-    "startsChecked": true
+    "startsChecked": false
   },
   {
     "name": "mabinogion",
     "full_name": "Lady Charlotte Guest's Mabinogion",
     "checkbox_key": "checkbox_mabinogion",
     "text": text_mabinogion,
-    "startsChecked": true
+    "startsChecked": false
   }
 ];
 
