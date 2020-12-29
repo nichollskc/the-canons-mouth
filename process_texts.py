@@ -50,3 +50,12 @@ def json_dumps_unquote(obj, *args, **kwargs):
     s = s.replace('"@@', '')
     s = s.replace('@@"', '')
     return s
+
+def process_txt_for_search(txtfile, outfile):
+    with open(txtfile, 'r') as f:
+        lines = f.readlines()
+
+    kept_lines = trim_txt(lines)
+
+    with open(outfile, 'w') as f:
+        f.writelines(kept_lines)

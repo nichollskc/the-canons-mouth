@@ -2,7 +2,7 @@ configfile: "config.yml"
 
 rule download_file:
     output:
-        out="texts/{name}.{ext}",
+        out="texts/raw/{name}.{ext}",
     params:
         url=lambda wildcards: config['texts'][wildcards.name]['urls'][wildcards.ext]
     shell:
@@ -10,7 +10,7 @@ rule download_file:
 
 rule txt_to_jsx:
     input:
-        txt="texts/{name}.txt",
+        txt="texts/raw/{name}.txt",
     output:
         js="src/texts/{name}.js"
     run:
@@ -18,6 +18,15 @@ rule txt_to_jsx:
         pt.txt_to_text_export(wildcards.name,
                               input.txt,
                               output.js)
+
+rule txt_to_searchable:
+    input:
+        txt="texts/raw/{name}.txt",
+    output:
+        txt="texts/search/{name}.txt",
+    run:
+        import process_texts as pt
+        pt.process_txt_for_search(input.txt, output.txt)
 
 rule text_props_js:
     output:
@@ -34,6 +43,8 @@ rule all_js:
 
 rule all_texts:
     input:
-        expand("texts/{name}.{ext}",
+        expand("texts/raw/{name}.{ext}",
                name=config['texts'].keys(),
-               ext=['txt', 'html'])
+               ext=['txt', 'html']),
+        expand("texts/search/{name}.txt",
+               name=config['texts'].keys())
