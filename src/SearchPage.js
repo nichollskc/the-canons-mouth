@@ -1,5 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import ReactPaginate from 'react-paginate';
+import debounce from 'underscore/modules/debounce.js';
+
 import SearchBar from './SearchBar';
 import ResultList from './ResultList';
 
@@ -8,6 +10,8 @@ const SearchPage = (props) => {
     const [pageCount, setPageCount] = useState(0);
     const [keyword, setKeyword] = useState('');
     const [resultList, setResultList] = useState();
+
+    const delayed = useRef(debounce((newValue) => updateResults(newValue), 1000));
 
     const updateResults = async (keyword) => {
         console.log(props.perPage);
@@ -27,15 +31,19 @@ const SearchPage = (props) => {
              });
     }
 
+
     const updateKeyword = async (keyword) => {
         setKeyword(keyword);
-        updateResults(keyword);
-    }
+    };
 
     // Whenever the currentPage is updated, request the right page of results
     useEffect(() => {
         updateResults(keyword);
     }, [currentPage]);
+
+    useEffect(() => {
+        delayed.current(keyword)
+    }, [keyword]);
 
     const handlePageClick = (clickData) => {
         console.log(currentPage);
