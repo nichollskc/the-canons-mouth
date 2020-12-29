@@ -33,10 +33,14 @@ const SearchPage = (props) => {
                updateResults(keyword);
             }
 
-      const handlePageClick = (clickData) => {
-            console.log("Selected " + clickData.selected);
-            setCurrentPage(clickData.selected);
+      // Whenever the currentPage is updated, request the right page of results
+      useEffect(() => {
             updateResults(keyword);
+      }, [currentPage]);
+
+      const handlePageClick = (clickData) => {
+            console.log(currentPage);
+            setCurrentPage(clickData.selected);
       };
 
       return (
