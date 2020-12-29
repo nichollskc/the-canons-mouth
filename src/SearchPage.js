@@ -46,7 +46,7 @@ const SearchPage = (props) => {
                  keyword={keyword} 
                  setKeyword={updateKeyword}
                 />
-                <div className="commentBox">
+                <div className="results">
                   <ResultList resultList={resultList}/>
                   <ReactPaginate
                     previousLabel={'previous'}
