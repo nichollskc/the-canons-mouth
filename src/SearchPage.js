@@ -11,7 +11,7 @@ const SearchPage = (props) => {
     const [keyword, setKeyword] = useState('');
     const [resultList, setResultList] = useState();
 
-    const delayed = useRef(debounce((newValue) => updateResults(newValue), 1000));
+    const delayedUpdateResults = useRef(debounce((newValue) => updateResults(newValue), 1000));
 
     const updateResults = async (keyword) => {
         console.log(props.perPage);
@@ -41,8 +41,11 @@ const SearchPage = (props) => {
         updateResults(keyword);
     }, [currentPage]);
 
+    // Whenever keyword is updated, send a request to update the results.
+    // Delay this request until no keypresses have been made in the last second to
+    // avoid sending too many requests
     useEffect(() => {
-        delayed.current(keyword)
+        delayedUpdateResults.current(keyword)
     }, [keyword]);
 
     const handlePageClick = (clickData) => {
@@ -68,6 +71,7 @@ const SearchPage = (props) => {
                   containerClassName={'pagination'}
                   subContainerClassName={'pages pagination'}
                   activeClassName={'active'}
+                  forcePage={currentPage}
                 />
             </div>
 
