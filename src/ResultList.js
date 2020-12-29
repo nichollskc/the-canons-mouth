@@ -6,8 +6,8 @@ const ResultList = ({resultList=[]}) => {
                   { resultList.map((data,index) => {
                           if (data) {
                               return (
-                                  <div key={data.name}>
-                                      <h1>{data.name}</h1>
+                                  <div key={data.id}>
+                                      <h1>{data.match}</h1>
                                   </div>  
                               )    
                           }
