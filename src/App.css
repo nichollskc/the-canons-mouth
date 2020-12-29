@@ -24,3 +24,10 @@
 .smallFont {
   font-size: calc(5px + 1vmin);
 }
+
+.searchBar {
+      width:"20rem";
+      background:"#F2F1F9";
+      border:"none";
+      padding:"0.5rem";
+}
