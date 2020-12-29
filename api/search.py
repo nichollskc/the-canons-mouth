@@ -2,8 +2,8 @@ import suffixtrie
 
 def search(pattern):
     if len(pattern) > 0:
-        matches = [{"id": i, "match": f"{pattern} {i}", "text": "The Iliad"} for i in range(len(pattern)*7)]
+        matches = suffixtrie.find_exact(pattern)
     else:
-        matches = []
+        matches = {'matches': [], 'num_matches': 0}
 
     return matches

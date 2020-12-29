@@ -16,9 +16,9 @@ def process_search(encoded_request, per_page, page):
     print(request)
     pattern = request['pattern']
 
-    matches = search.search(pattern)
+    result = search.search(pattern)
 
     start_index = int(page) * int(per_page)
     end_index = start_index + int(per_page)
-    restricted_matches = matches[start_index:end_index]
-    return {"matches": restricted_matches, "num_results": len(matches)}
+    restricted_matches = result['matches'][start_index:end_index]
+    return {"matches": restricted_matches, "num_results": result['num_matches']}

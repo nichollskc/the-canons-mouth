@@ -6,10 +6,12 @@ const ResultList = ({resultList=[]}) => {
                   { resultList.map((data,index) => {
                           if (data) {
                               return (
-                                  <div key={data.id}>
-                                      <h1>{data.match}</h1>
-                                  </div>  
-                              )    
+                                  <div key={data.key}>
+                                      <h1>{data.matching}</h1>
+                                      <p>{data.length}</p>
+                                      <p>{data.errors}</p>
+                                  </div>
+                              )
                           }
                           return null
                       })
