@@ -1,4 +1,7 @@
 import json
+import re
+
+import nltk
 
 def txt_to_text_export(name, txtfile, outfile):
     header = [f"const text_{name} = `\n"]
@@ -59,3 +62,19 @@ def process_txt_for_search(txtfile, outfile):
 
     with open(outfile, 'w') as f:
         f.writelines(kept_lines)
+
+def add_sentence_breaks(txtfile, with_breaks):
+    with open(txtfile, 'r') as f:
+        contents = f.read()
+
+    sentence_boundaries = nltk.PunktSentenceTokenizer().span_tokenize(contents)
+
+    with open(with_breaks, 'w') as f:
+        (last_start, last_end) = next(sentence_boundaries)
+        for (start, end) in sentence_boundaries:
+            sentence = contents[last_start:start]
+            f.write(re.sub(r'(\n\n\s*)', r'\1<<STOP>>', sentence) + "<<STOP>>")
+            (last_start, last_end) = (start, end)
+
+        sentence = contents[last_start:]
+        f.write(re.sub(r'(\n\n\s*)', r'\1<<STOP>>', sentence))

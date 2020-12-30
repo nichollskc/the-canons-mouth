@@ -28,6 +28,15 @@ rule txt_to_searchable:
         import process_texts as pt
         pt.process_txt_for_search(input.txt, output.txt)
 
+rule add_sentence_breaks:
+    input:
+        txt="texts/search/{name}.txt",
+    output:
+        txt="texts/tokenized/{name}.txt",
+    run:
+        import process_texts as pt
+        pt.add_sentence_breaks(input.txt, output.txt)
+
 rule text_props_js:
     output:
         js="src/texts.js"
@@ -43,8 +52,8 @@ rule all_js:
 
 rule all_texts:
     input:
-        expand("texts/raw/{name}.{ext}",
-               name=config['texts'].keys(),
-               ext=['txt', 'html']),
-        expand("texts/search/{name}.txt",
+        expand("texts/raw/{name}.html",
+               name=config['texts'].keys()),
+        expand("texts/{folder}/{name}.txt",
+               folder=['search', 'raw', 'tokenized'],
                name=config['texts'].keys())
