@@ -6,10 +6,9 @@ const ResultList = ({resultList=[]}) => {
                   { resultList.map((data,index) => {
                           if (data) {
                               return (
-                                  <div key={data.key}>
-                                      <h1>{data.matching}</h1>
-                                      <p>{data.length}</p>
-                                      <p>{data.errors}</p>
+                                  <div key={data.key} class="canonText">
+                                      <pre>{data.before}<b>{data.matching}</b>{data.after}</pre>
+                                      <p>{data.text}:{data.start_line} Errors:{data.errors}</p>
                                   </div>
                               )
                           }

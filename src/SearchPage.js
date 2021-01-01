@@ -58,6 +58,20 @@ const SearchPage = (props) => {
             <h1>Result List</h1>
             <SearchBar keyword={keyword} setKeyword={updateKeyword} />
             <div className="results">
+                <ReactPaginate
+                  previousLabel={'previous'}
+                  nextLabel={'next'}
+                  breakLabel={'...'}
+                  breakClassName={'break-me'}
+                  pageCount={pageCount}
+                  marginPagesDisplayed={2}
+                  pageRangeDisplayed={5}
+                  onPageChange={handlePageClick}
+                  containerClassName={'pagination'}
+                  subContainerClassName={'pages pagination'}
+                  activeClassName={'active'}
+                  forcePage={currentPage}
+                />
                 <ResultList resultList={resultList}/>
                 <ReactPaginate
                   previousLabel={'previous'}

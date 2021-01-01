@@ -12,6 +12,10 @@
   font-family: serif;
 }
 
+.canonText pre b {
+  color: #a00;
+}
+
 #buttonsDiv {
   margin-top: 5vh;
   display: flex;

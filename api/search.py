@@ -6,4 +6,6 @@ def search(pattern):
     else:
         matches = {'matches': [], 'num_matches': 0}
 
+    print(matches)
+
     return matches

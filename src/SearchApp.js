@@ -5,7 +5,7 @@ function App() {
       return (
               <div className="App">
                 <header className="App-header">
-                    <SearchPage perPage={5}/>
+                    <SearchPage perPage={50}/>
                 </header>
               </div>
             );
