@@ -10,6 +10,8 @@
 
 .canonText pre {
   font-family: serif;
+  font-size: calc(7px + 1.5vmin);
+  margin: 0;
 }
 
 .canonText pre b {
@@ -59,4 +61,17 @@
 
 .pagination li.active {
    background: #87CEFF;
+}
+
+.resultLabel {
+   color: #822;
+   opacity: 60%;
+   font-size: calc(5px + 1vmin);
+   text-align: right;
+   margin-top: 0;
+   margin-bottom: calc(8px + 1.5vmin);
+}
+
+.resultLabel p {
+    margin: 0;
 }
