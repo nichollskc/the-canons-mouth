@@ -17,10 +17,11 @@ const SearchPage = (props) => {
         console.log(props.perPage);
         let obj = {
                   'pattern': keyword,
-                  'selected_texts': props.selected_texts,
+                  'config': {'selected_texts': Array.from(props.selected_texts)},
         };
         console.log(obj);
         let objJsonStr = JSON.stringify(obj);
+        console.log(objJsonStr);
         let encodedRequest = Buffer.from(objJsonStr).toString("base64");
         console.log(encodedRequest);
         return await fetch('/search/' + encodedRequest + '/pp' + props.perPage + '/p' + currentPage)
@@ -41,7 +42,7 @@ const SearchPage = (props) => {
     // Whenever the currentPage is updated, request the right page of results
     useEffect(() => {
         updateResults(keyword);
-    }, [currentPage, props.selected_texts]);
+    }, [currentPage, keyword, props.selected_texts]);
 
     // Whenever keyword is updated, send a request to update the results.
     // Delay this request until no keypresses have been made in the last second to
