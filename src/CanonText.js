@@ -1,68 +1,61 @@
-import React from 'react';
-import CheckboxContainer from './CheckboxContainer.js';
+import React, {useState} from 'react';
+import Checkbox from './Checkbox';
+import SearchPage from './SearchPage.js';
 import texts from './texts.js';
 
-const defaultTexts = {};
-const allTextsOff = {};
-const allTextsOn = {};
+const defaultTexts = new Set();
+const allTextsOff = new Set();
+const allTextsOn = new Set();
 texts.forEach(i => {
-    defaultTexts[i.name] = i.startsChecked;
-    allTextsOff[i.name] = false;
-    allTextsOn[i.name] = true;
+    if (i.startsChecked) {
+        defaultTexts.add(i.name);
+    }
+    allTextsOn.add(i.name);
 });
 
-class CanonText extends React.Component {
-    constructor(props) {
-        super(props);
+const CanonText = (props) => {
+    const [checkedItems, setCheckedItems] = useState(defaultTexts);
 
-        this.state = {
-            checkedItems: {...defaultTexts},
+    const handleCheckboxChange = (event) => {
+        const item = event.target.name;
+        const isChecked = event.target.checked;
+        const updatedItems = new Set(checkedItems);
+        if (isChecked) {
+            updatedItems.add(item);
+        } else {
+            updatedItems.delete(item);
         }
-        this.handleCheckboxChange = this.handleCheckboxChange.bind(this);
-        this.handleAllTextsOn = this.handleAllTextsOn.bind(this);
-        this.handleAllTextsOff = this.handleAllTextsOff.bind(this);
+        setCheckedItems(updatedItems);
     }
 
-    handleCheckboxChange(e) {
-        const item = e.target.name;
-        const isChecked = e.target.checked;
-        const updatedItems = {...this.state.checkedItems};
-        updatedItems[item] = isChecked;
-        this.setState({ checkedItems: updatedItems });
+    const handleAllTextsOff = (event) => {
+        setCheckedItems(allTextsOff);
     }
 
-    handleAllTextsOff(e) {
-        this.setState({ checkedItems: {...allTextsOff} });
+    const handleAllTextsOn = (event) => {
+        setCheckedItems(allTextsOn);
     }
 
-    handleAllTextsOn(e) {
-        this.setState({ checkedItems: {...allTextsOn} });
-    }
-
-    render() {
-        return(
-            <React.Fragment>
-                   <div id='buttonsDiv'>
-                       <p class='smallFont'>Loading many texts at once can be slow...</p>
-                       <button id='allOn' onClick={this.handleAllTextsOn}>Select all</button>
-                       <button id='allOff' onClick={this.handleAllTextsOff}>Deselect all</button>
-                       <CheckboxContainer checkedItems={this.state.checkedItems} handleCheckboxChange={this.handleCheckboxChange} checkboxes={texts}/>
-                   </div>
-                   {
-                       texts.map(item => (
-                           <React.Fragment>
-                           {this.state.checkedItems[item.name] === true &&
-                               <div class='canonText'>
-                                   <h2>{item.full_name}</h2>
-                                   <pre>{item.text}</pre>
-                               </div>
-                           }
-                           </React.Fragment>
-                       ))
-                   }
-            </React.Fragment>
-        );
-    }
+    return(
+        <React.Fragment>
+               <div id='buttonsDiv'>
+                   <p class='smallFont'>Loading many texts at once can be slow...</p>
+                   <button id='allOn' onClick={handleAllTextsOn}>Select all</button>
+                   <button id='allOff' onClick={handleAllTextsOff}>Deselect all</button>
+                   <React.Fragment>
+                       {
+                           texts.map(item => (
+                               <label key={item.checkbox_key}>
+                                   {item.full_name}
+                                   <Checkbox name={item.name} checked={checkedItems.has(item.name)} onChange={handleCheckboxChange} />
+                               </label>
+                           ))
+                       }
+                   </React.Fragment>
+               </div>
+               <SearchPage perPage={50} selected_texts={checkedItems}/>
+        </React.Fragment>
+    );
 }
 
 export default CanonText;

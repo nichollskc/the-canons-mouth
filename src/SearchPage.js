@@ -17,7 +17,9 @@ const SearchPage = (props) => {
         console.log(props.perPage);
         let obj = {
                   'pattern': keyword,
+                  'selected_texts': props.selected_texts,
         };
+        console.log(obj);
         let objJsonStr = JSON.stringify(obj);
         let encodedRequest = Buffer.from(objJsonStr).toString("base64");
         console.log(encodedRequest);
@@ -39,7 +41,7 @@ const SearchPage = (props) => {
     // Whenever the currentPage is updated, request the right page of results
     useEffect(() => {
         updateResults(keyword);
-    }, [currentPage]);
+    }, [currentPage, props.selected_texts]);
 
     // Whenever keyword is updated, send a request to update the results.
     // Delay this request until no keypresses have been made in the last second to
@@ -57,6 +59,7 @@ const SearchPage = (props) => {
         <React.Fragment>
             <h1>Result List</h1>
             <SearchBar keyword={keyword} setKeyword={updateKeyword} />
+
             <div className="results">
                 <ReactPaginate
                   previousLabel={'previous'}
