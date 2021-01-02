@@ -28,6 +28,14 @@ rule txt_to_searchable:
         import process_texts as pt
         pt.process_txt_for_search(input.txt, output.txt)
 
+rule txt_trim:
+    input:
+        txt="texts/tokenized/{name}.txt",
+    output:
+        txt="texts/small/tokenized/{name}.txt",
+    shell:
+        "head -n 500 {input.txt} > {output.txt}"
+
 rule add_sentence_breaks:
     input:
         txt="texts/search/{name}.txt",
@@ -55,5 +63,5 @@ rule all_texts:
         expand("texts/raw/{name}.html",
                name=config['texts'].keys()),
         expand("texts/{folder}/{name}.txt",
-               folder=['search', 'raw', 'tokenized'],
+               folder=['search', 'raw', 'tokenized', 'small/tokenized'],
                name=config['texts'].keys())
