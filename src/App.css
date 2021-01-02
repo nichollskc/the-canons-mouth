@@ -18,12 +18,35 @@
   color: #a00;
 }
 
+#checkboxes {
+  margin-top: 5vh;
+  font-size: calc(6px + 1.2vmin);
+}
+
+#checkboxes span {
+  margin-left: 10px;
+}
+
+#checkboxes .countForText {
+  vertical-align: 7px;
+}
+
 #buttonsDiv {
   margin-top: 5vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+#buttonsDiv button {
+  background-color: #822;
+  color: white;
+  border: 1px;
+  border-radius: 4px;
+  margin: 2px;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: calc(6px + 1.2vmin);
 }
 
 .smallFont {
@@ -78,4 +101,8 @@
 
 .resultLabel p {
     margin: 0;
+}
+
+#searchBar {
+    margin: 20px;
 }

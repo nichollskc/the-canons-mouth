@@ -1,4 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
+import Container from 'react-bootstrap/Container';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
 import Checkbox from './Checkbox';
 import SearchPage from './SearchPage.js';
 import texts from './texts.js';
@@ -47,8 +50,9 @@ const CanonText = (props) => {
     }, [countsByText]);
 
     return(
-        <React.Fragment>
-               <div id='buttonsDiv'>
+        <Container>
+            <Row>
+               <Col>
                    <div id="checkboxes">
                        <table>
                            {
@@ -57,26 +61,27 @@ const CanonText = (props) => {
                                        <td>
                                            <label key={item.checkbox_key}>
                                                <Checkbox name={item.name} checked={checkedItems.has(item.name)} onChange={handleCheckboxChange} />
+                                               <span>{item.full_name}</span>
                                            </label>
                                        </td>
                                        <td>
-                                           {item.full_name}
-                                       </td>
-                                       <td>
-                                           ({countsByText[item.name]})
+                                           <span class="countForText">({countsByText[item.name]})</span>
                                        </td>
                                    </tr>
                                ))
                            }
                        </table>
                    </div>
-                   <div>
+                   <div id="buttonsDiv">
                        <button id='allOn' onClick={handleAllTextsOn}>Select all</button>
                        <button id='allOff' onClick={handleAllTextsOff}>Deselect all</button>
                    </div>
-               </div>
-               <SearchPage perPage={50} selected_texts={checkedItems} updateCountsByText={updateCountsByText}/>
-        </React.Fragment>
+               </Col>
+               <Col xs={9}>
+                   <SearchPage perPage={50} selected_texts={checkedItems} updateCountsByText={updateCountsByText}/>
+               </Col>
+           </Row>
+        </Container>
     );
 }
 

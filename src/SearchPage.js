@@ -61,7 +61,7 @@ const SearchPage = (props) => {
 
     return (
         <React.Fragment>
-            <h1>Result List</h1>
+            <h1>The Canon's Mouth</h1>
             <SearchBar keyword={keyword} setKeyword={updateKeyword} />
 
             <div className="results">
