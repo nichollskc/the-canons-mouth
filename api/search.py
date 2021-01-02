@@ -22,5 +22,6 @@ def search(pattern, config):
     print(counts_by_text)
     result["matches"] = filtered_matches
     result["counts_by_text"] = counts_by_text
+    result["num_filtered_matches"] = len(filtered_matches)
 
     return result

@@ -9,6 +9,7 @@ const SearchPage = (props) => {
     const [currentPage, setCurrentPage] = useState(0);
     const [pageCount, setPageCount] = useState(0);
     const [totalResults, setTotalResults] = useState(0);
+    const [numFilteredResults, setNumFilteredResults] = useState(0);
     const [keyword, setKeyword] = useState('');
     const [resultList, setResultList] = useState();
 
@@ -29,10 +30,11 @@ const SearchPage = (props) => {
             .then(response => response.json())
             .then(data => {
                 console.log(data)
-                let numPages = Math.ceil(data.num_results / props.perPage)
+                let numPages = Math.ceil(data.num_filtered_matches / props.perPage)
                 setPageCount(numPages)
                 setResultList(data.matches)
                 setTotalResults(data.num_matches)
+                setNumFilteredResults(data.num_filtered_matches)
                 props.updateCountsByText(data.counts_by_text)
              });
     }
@@ -79,7 +81,7 @@ const SearchPage = (props) => {
                   activeClassName={'active'}
                   forcePage={currentPage}
                 />
-                <p>Total results: {totalResults}</p>
+                <p>Total results: {totalResults}. In selected texts: {numFilteredResults}</p>
                 <ResultList resultList={resultList}/>
                 <ReactPaginate
                   previousLabel={'previous'}
