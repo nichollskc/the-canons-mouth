@@ -1,4 +1,4 @@
-configfile: "config.yml"
+configfile: "config.json"
 
 rule download_file:
     output:
