@@ -3,7 +3,7 @@ import suffixtrie
 from api import text_info
 
 def search(pattern, config):
-    if len(pattern) > 0:
+    if len(pattern) > 1:
         result = suffixtrie.find_exact(pattern)
     else:
         result = {"matches": [], "num_matches": 0}
