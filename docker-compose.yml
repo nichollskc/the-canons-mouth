@@ -10,7 +10,6 @@ services:
 
   frontend:
     build: frontend
-    command: ["npm", "start"]
     volumes:
       - ./client:/frontend
       - node-modules:/frontend/node_modules
