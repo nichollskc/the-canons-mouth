@@ -12,4 +12,6 @@ RUN pip install --upgrade pip && \
 COPY --from=builder /pyext/target/x86_64-unknown-linux-gnu/release/libsuffixtrie.so /backend/suffixtrie.so
 COPY ./api ./api
 COPY config.json ./config.json
+COPY texts ./texts
+COPY canon_tree.sst ./
 CMD gunicorn --bind=0.0.0.0:5000 --timeout 600 --pythonpath ./ -- api:app
