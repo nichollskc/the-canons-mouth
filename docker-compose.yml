@@ -8,8 +8,6 @@ services:
 
   frontend:
     build: frontend
-    command: npm start
-    tty: true
     volumes:
       - node-modules:/frontend/node_modules
     ports:
