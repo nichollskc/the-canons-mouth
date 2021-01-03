@@ -12,4 +12,4 @@ RUN pip install --upgrade pip && \
 COPY --from=builder /pyext/target/x86_64-unknown-linux-gnu/release/libsuffixtrie.so /backend/suffixtrie.so
 COPY ./api ./api
 COPY config.json ./config.json
-CMD gunicorn --bind=localhost:5000 --timeout 600 --pythonpath ./ -- api:app 
+CMD gunicorn --bind=0.0.0.0:5000 --timeout 600 --pythonpath ./ -- api:app

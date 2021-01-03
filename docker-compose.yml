@@ -1,22 +1,21 @@
 version: "3.7"
 
 services:
-  api:
-    build: api
-    volumes:
-      - ./api:/backend
+  backend:
+    build: backend
     ports:
       - "5000:5000"
 
   frontend:
     build: frontend
+    command: npm start
+    tty: true
     volumes:
-      - ./client:/frontend
       - node-modules:/frontend/node_modules
     ports:
       - '3000:3000'
     depends_on:
-      - api
+      - backend
 
 volumes:
     node-modules:
