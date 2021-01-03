@@ -1,4 +1,4 @@
-import suffixtrie
+from api import suffixtrie
 
 from api import text_info
 
