@@ -63,10 +63,27 @@ def process_txt_for_search(txtfile, outfile):
     with open(outfile, 'w') as f:
         f.writelines(kept_lines)
 
-def add_sentence_breaks(txtfile, with_breaks):
+def extract_chapter_markers(txtfile, chapter_file):
     with open(txtfile, 'r') as f:
-        contents = f.read()
+        lines = f.readlines()
 
+    chapter_starts = []
+    fixed_lines = []
+
+    for line_number, line in enumerate(lines):
+        match = re.match(r'<<CHAPTER::(.*)>>', line)
+        if match:
+            chapter_starts.append([line_number, match[1]])
+            line = re.sub(r'<<CHAPTER::.*>>', '', line)
+
+        fixed_lines.append(line)
+
+    with open(chapter_file, 'w') as f:
+        json.dump(chapter_starts, f, indent=2)
+
+    return fixed_lines
+
+def add_sentence_breaks(contents, with_breaks):
     sentence_boundaries = nltk.PunktSentenceTokenizer().span_tokenize(contents)
 
     with open(with_breaks, 'w') as f:

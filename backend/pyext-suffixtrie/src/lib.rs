@@ -44,6 +44,8 @@ fn py_find_exact(py: Python, pattern: &str) -> PyResult<PyDict> {
         let py_match: PyDict = PyDict::new(py);
         py_match.set_item(py, "index_in_str", x.index_in_str).unwrap();
         py_match.set_item(py, "length", x.length).unwrap();
+        py_match.set_item(py, "start_line", x.start_line).unwrap();
+        py_match.set_item(py, "end_line", x.end_line).unwrap();
         py_match.set_item(py, "errors", x.errors).unwrap();
         py_match.set_item(py, "text_index", x.text_index).unwrap();
         py_match.set_item(py, "text", text_names[x.text_index].clone()).unwrap();

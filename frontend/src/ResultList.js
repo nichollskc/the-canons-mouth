@@ -10,7 +10,7 @@ const ResultList = ({resultList=[]}) => {
                     <div key={data.key} class={`canonText ${data.text_id}`}>
                         <pre>{data.before}<b>{data.matching}</b>{data.after}</pre>
                         <div class="resultLabel">
-                            <p>{data.text_fullname}{data.start_line}</p>
+                            <p>{data.text_fullname}: {data.chapter}</p>
                             <p>Errors:{data.errors}</p>
                         </div>
                     </div>

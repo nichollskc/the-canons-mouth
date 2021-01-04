@@ -36,14 +36,16 @@ rule txt_trim:
     shell:
         "head -n 500 {input.txt} > {output.txt}"
 
-rule add_sentence_breaks:
+rule add_sentence_breaks_chapters:
     input:
         txt="texts/search/{name}.txt",
     output:
+        chapters="texts/chapters/{name}.json",
         txt="texts/tokenized/{name}.txt",
     run:
         import process_texts as pt
-        pt.add_sentence_breaks(input.txt, output.txt)
+        lines = pt.extract_chapter_markers(input.txt, output.chapters)
+        pt.add_sentence_breaks(''.join(lines), output.txt)
 
 rule text_props_js:
     output:
