@@ -2,12 +2,14 @@ version: "2.4"
 
 services:
   backend:
+    image: nichollskc/thecanonsmouth_backend
     build: backend
     ports:
       - "5000:5000"
-    mem_limit: 6000m
+    mem_limit: 4000m
 
   frontend:
+    image: nichollskc/thecanonsmouth_frontend
     build: frontend
     volumes:
       - node-modules:/frontend/node_modules
@@ -15,7 +17,7 @@ services:
       - '3000:3000'
     depends_on:
       - backend
-    mem_limit: 1000m
+    mem_limit: 300m
 
 volumes:
     node-modules:
