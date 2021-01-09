@@ -4,7 +4,10 @@ from api import text_info
 
 def search(pattern, config):
     if len(pattern) > 1:
-        result = suffixtrie.find_exact(pattern)
+        result = suffixtrie.find(pattern,
+                                 config["max_errors"],
+                                 config["ignored_chars"],
+                                 config["case_insensitve"])
     else:
         result = {"matches": [], "num_matches": 0}
 

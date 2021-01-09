@@ -5,6 +5,7 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import debounce from 'underscore/modules/debounce.js';
 
+import Checkbox from './Checkbox';
 import SearchBar from './SearchBar';
 import ResultList from './ResultList';
 import LoadingSpinner from './LoadingSpinner';
@@ -15,18 +16,23 @@ const SearchPage = (props) => {
     const [totalResults, setTotalResults] = useState(0);
     const [numFilteredResults, setNumFilteredResults] = useState(0);
     const [keyword, setKeyword] = useState('');
+    const [searchKeyword, setSearchKeyword] = useState('');
+    const [caseInsensitive, setCaseInsensitive] = useState(true);
     const [resultList, setResultList] = useState();
     const [promiseInProgress, setPromiseInProgress] = useState(false);
     const [promiseBegun, setPromiseBegun] = useState(false);
 
-    const delayedUpdateResults = useRef(debounce((newValue) => updateResults(newValue), 1000));
+    const delayedSetKeyword = useRef(debounce((newValue) => setSearchKeyword(newValue), 1000));
     const delayedSetPromiseInProgress = useRef(debounce((newValue) => setPromiseInProgress(newValue), 1));
 
-    const updateResults = async (keyword) => {
+    const updateResults = async (searchKeyword, currentPage, caseInsensitive) => {
         console.log(props.perPage);
         let obj = {
-                  'pattern': keyword,
-                  'config': {'selected_texts': Array.from(props.selected_texts)},
+                  'pattern': searchKeyword,
+                  'config': {'selected_texts': Array.from(props.selected_texts),
+                             'max_errors': 1,
+                             'case_insensitve': caseInsensitive,
+                             'ignored_chars': ';:'},
         };
         console.log(obj);
         let objJsonStr = JSON.stringify(obj);
@@ -50,19 +56,15 @@ const SearchPage = (props) => {
 
     const updateKeyword = async (keyword) => {
         setKeyword(keyword);
+        delayedSetKeyword.current(keyword);
     };
-
-    // Whenever the currentPage is updated, request the right page of results
-    useEffect(() => {
-        updateResults(keyword);
-    }, [currentPage, props.selected_texts]);
 
     // Whenever keyword is updated, send a request to update the results.
     // Delay this request until no keypresses have been made in the last second to
     // avoid sending too many requests
     useEffect(() => {
-        delayedUpdateResults.current(keyword)
-    }, [keyword]);
+        updateResults(searchKeyword, currentPage, caseInsensitive)
+    }, [searchKeyword, currentPage, props.selected_texts, caseInsensitive]);
 
     useEffect(() => {
         delayedSetPromiseInProgress.current(promiseBegun)
@@ -73,12 +75,20 @@ const SearchPage = (props) => {
         setCurrentPage(clickData.selected);
     };
 
+    const handleCaseCheckboxChange = (event) => {
+        const isChecked = event.target.checked;
+        setCaseInsensitive(isChecked);
+    };
+
     return (
         <Container>
             <h1>The Canon's Mouth</h1>
             <Row>
                 <Col>
                     <SearchBar keyword={keyword} setKeyword={updateKeyword} />
+                </Col>
+                <Col>
+                    <Checkbox name="case_insensitive" checked={caseInsensitive} onChange={handleCaseCheckboxChange} />
                 </Col>
                 <Col>
                     <LoadingSpinner promiseInProgress={promiseInProgress}/>

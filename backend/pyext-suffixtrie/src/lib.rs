@@ -3,6 +3,7 @@ extern crate cpython;
 
 use std::error::Error;
 use std::fs::File;
+use std::collections::HashMap;
 
 use cpython::{Python, PyDict, PyResult};
 use lazy_static::lazy_static;
@@ -36,8 +37,20 @@ fn build_or_read_canon_tree(path: &str) -> SuffixTrie {
     }
 }
 
-fn py_find_exact(py: Python, pattern: &str) -> PyResult<PyDict> {
-    let mut matches = TRIE.find_exact(pattern);
+fn py_find(py: Python,
+           pattern: &str,
+           max_errors: usize,
+           ignored_chars: &str,
+           case_insensitve: bool) -> PyResult<PyDict> {
+    let mut ignored: HashMap<char, bool> = HashMap::new();
+    for ignored_char in ignored_chars.chars() {
+        ignored.insert(ignored_char, true);
+    }
+
+    let mut matches = TRIE.find_edit_distance_ignore(pattern,
+                                                     max_errors,
+                                                     ignored,
+                                                     case_insensitve);
     let text_names = TRIE.get_text_names();
     let py_matches: Vec<PyDict> = matches.iter().enumerate().map(|(i, x)| {
         let (before, matching, after) = TRIE.get_strings_of_match(x, 2);
@@ -63,6 +76,9 @@ fn py_find_exact(py: Python, pattern: &str) -> PyResult<PyDict> {
 
 py_module_initializer!(suffixtrie, |py, m | {
     m.add(py, "__doc__", "This module is implemented in Rust")?;
-    m.add(py, "find_exact", py_fn!(py, py_find_exact(pattern: &str)))?;
+    m.add(py, "find", py_fn!(py, py_find(pattern: &str,
+                                         max_errors: usize,
+                                         ignored_chars: &str,
+                                         case_insensitve: bool)))?;
     Ok(())
 });
