@@ -11,8 +11,8 @@ use bincode;
 
 use spyglass::SuffixTrie;
 
-const SUFFIXTRIE_PATH: &str = "./partial_canon_tree.sst";
-const TEXTS_DIR: &str = "./texts/small/tokenized/";
+const SUFFIXTRIE_PATH: &str = "./canon_tree.sst";
+const TEXTS_DIR: &str = "./texts/tokenized/";
 
 lazy_static! {
     static ref TRIE: SuffixTrie = build_or_read_canon_tree(TEXTS_DIR);

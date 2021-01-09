@@ -1,7 +1,7 @@
 FROM rustpython:latest as builder
 COPY pyext-suffixtrie pyext
 WORKDIR pyext
-RUN rustup target add x86_64-unknown-linux-gnu
+RUN rustup target add x86_64-unknown-linux-gnu 
 RUN cargo build --release --target x86_64-unknown-linux-gnu
 
 FROM python:3.7-slim
@@ -13,5 +13,5 @@ COPY --from=builder /pyext/target/x86_64-unknown-linux-gnu/release/libsuffixtrie
 COPY ./api ./api
 COPY config.json ./config.json
 COPY texts ./texts
-COPY partial_canon_tree.sst ./
-CMD gunicorn --bind=0.0.0.0:1000 --timeout 600 --pythonpath ./ -- api:app
+COPY canon_tree.sst ./
+CMD gunicorn --bind=0.0.0.0:5000 --timeout 600 --pythonpath ./ -- api:app

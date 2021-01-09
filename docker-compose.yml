@@ -1,22 +1,22 @@
 version: "2.4"
 
 services:
-  small_backend:
-    image: nichollskc/thecanonsmouth_backend_small
+  backend:
+    image: nichollskc/thecanonsmouth_backend
     build: backend
     ports:
-      - "1000:1000"
+      - "5000:5000"
     mem_limit: 4000m
 
-  small_frontend:
-    image: nichollskc/thecanonsmouth_frontend_small
+  frontend:
+    image: nichollskc/thecanonsmouth_frontend
     build: frontend
     volumes:
       - node-modules:/frontend/node_modules
     ports:
-      - '2000:2000'
+      - '3000:3000'
     depends_on:
-      - small_backend
+      - backend
     mem_limit: 300m
 
 volumes:
