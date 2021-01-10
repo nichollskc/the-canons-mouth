@@ -1,4 +1,3 @@
-import './App.css';
 import CanonText from './CanonText.js';
 
 function App() {
