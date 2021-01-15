@@ -8,7 +8,7 @@ const ResultList = ({resultList=[]}) => {
             if (data) {
                 return (
                     <div key={data.key} class={`canonText ${data.text_id}`}>
-                        <a href={"/texts/" + data.text_id + ".html#" + data.start_line}>
+                        <a href={"/texts/" + data.text_id + ".html#line_" + data.start_line}>
                         <pre>{data.before}<b>{data.matching}</b>{data.after}</pre>
                         <div class="resultLabel">
                             <p>{data.text_fullname}: {data.chapter}</p>
