@@ -30,11 +30,17 @@ def search(pattern, config):
 
 def awk_search(pattern, config):
     print(config)
+    if config['case_insensitive']:
+        ignore_case_arg = "-v IGNORECASE=1"
+    else:
+        ignore_case_arg = ""
+
     matches = []
     for text in config['selected_texts']:
         result = subprocess.run(['backend/api/exact_match.sh',
                                  pattern,
-                                 f'backend/texts/search/{text}.txt'],
+                                 f'backend/texts/search/{text}.txt',
+                                 ignore_case_arg],
                                 stdout=subprocess.PIPE)
         output = result.stdout.decode('utf-8')
         text_matches = output.split('\nMATCHEND\n')[:-1]

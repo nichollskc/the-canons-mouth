@@ -2,8 +2,9 @@
 
 PATTERN=$1
 FILENAME=$2
+IGNORECASEARG=$3
 
-awk -v PATTERN="$PATTERN" -v FILENAME="$FILENAME" -v BUFFER=2 \
+gawk -v PATTERN="$PATTERN" -v FILENAME="$FILENAME" -v BUFFER=2 $IGNORECASEARG\
     'function join_with_seps(array, separray, start, end,     result, j)
      {
          result = array[start]
@@ -11,7 +12,7 @@ awk -v PATTERN="$PATTERN" -v FILENAME="$FILENAME" -v BUFFER=2 \
              result = result separray[j - 1] array[j]
          return result
      }
- 
+
      function join(array, start, end, sep,     result, j)
      {
          result = array[start]
