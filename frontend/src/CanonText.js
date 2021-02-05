@@ -61,7 +61,7 @@ const CanonText = (props) => {
                                        <td>
                                            <label key={item.checkbox_key}>
                                                <Checkbox name={item.name} checked={checkedItems.has(item.name)} onChange={handleCheckboxChange} />
-                                               <span>{item.full_name}</span>
+                                               <span><a href={"/texts/" + item.name + ".html"}>{item.full_name}</a></span>
                                            </label>
                                        </td>
                                        <td>
