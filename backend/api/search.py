@@ -52,11 +52,11 @@ def awk_search(pattern, config):
 
     for match_index, match in enumerate(matches):
         fields = match.split('===')
-        assert len(fields) == 6, f"Expecting 6 fields, found {len(fields)}. Match is {match}"
+        assert len(fields) == 6, "Expecting 6 fields, found " + str(len(fields)) + ". Match is " + str(match)
         match_dict = {
             'errors': 0,
             'length': len(pattern),
-            'key': f"match_{match_index}",
+            'key': "match_" + str(match_index),
             'text': fields[0],
             'before': fields[1],
             'matching': fields[2],

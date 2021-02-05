@@ -10,7 +10,7 @@ def construct_text_info_dict():
     text_info = config["texts"]
     for text_id in text_info.keys():
         text_dict = text_info[text_id]
-        text_dict["search_filename"] = f"{SEARCH_DIR}{text_id}.txt"
+        text_dict["search_filename"] = SEARCH_DIR + text_id + ".txt"
 
     text_info["unknown_text"] = {
         "full_name" : "Unknown text ID",
