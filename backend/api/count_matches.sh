@@ -1,0 +1,7 @@
+#!/bin/bash
+
+PATTERN=$1
+FILENAME=$2
+IGNORECASEARG=$3
+
+grep -o $IGNORECASEARG "$PATTERN" $FILENAME | wc -l

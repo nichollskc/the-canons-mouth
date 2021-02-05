@@ -26,13 +26,16 @@ def awk_search(pattern, config, start_index, end_index):
     print(config)
     if config['case_insensitive']:
         ignore_case_arg = "-v IGNORECASE=1"
+        grep_ignore_case_arg = "-i"
     else:
         ignore_case_arg = ""
+        grep_ignore_case_arg = ""
 
     matches = []
     counts_by_text = {text_id: 0 for text_id in text_info.TEXT_INFO.keys()}
+    total_matches = 0
     for text in config['selected_texts']:
-        max_match_index = end_index - len(matches)
+        max_match_index = str(end_index - len(matches))
         full_filename = "backend/texts/search/" + text + ".txt"
         result = subprocess.run(['backend/api/exact_match.sh',
                                  pattern,
@@ -44,7 +47,16 @@ def awk_search(pattern, config, start_index, end_index):
         text_matches = output.split('\nMATCHEND\n')[:-1]
 
         matches.extend(text_matches)
-        counts_by_text[text] = len(text_matches)
+
+        result = subprocess.run(['backend/api/count_matches.sh',
+                                 pattern,
+                                 full_filename,
+                                 grep_ignore_case_arg],
+                                stdout=subprocess.PIPE)
+        output = result.stdout.decode('utf-8')
+        print(output)
+        counts_by_text[text] = int(output)
+        total_matches += int(output)
     match_dicts = []
 
     print("Finished awk search")
@@ -68,5 +80,5 @@ def awk_search(pattern, config, start_index, end_index):
         text_info.add_text_info_to_match(match_dict)
         match_dicts.append(match_dict)
 
-    return len(matches), counts_by_text, match_dicts
+    return total_matches, counts_by_text, match_dicts
 
