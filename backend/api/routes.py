@@ -1,6 +1,9 @@
 import base64
 import json
+import os
 import time
+
+import flask
 
 from api import app
 from api import search
@@ -25,3 +28,12 @@ def process_search(encoded_request, per_page, page):
     result["matches"] = result["matches"][start_index:end_index]
 
     return result
+
+@app.route('/')
+def index():
+    filename = 'index.html'
+    path = os.path.abspath(app.static_folder) + '/' + filename
+    print(os.getcwd())
+    print(path)
+    print(os.path.exists(path))
+    return flask.send_from_directory(app.static_folder, filename)
