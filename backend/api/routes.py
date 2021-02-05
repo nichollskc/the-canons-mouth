@@ -23,13 +23,7 @@ def process_search(encoded_request, per_page, page):
     pattern = request["pattern"]
     config = request["config"]
 
-    result = search.search(pattern, config)
-
-    # Restrict to only the matches required for this page
-    start_index = int(page) * int(per_page)
-    end_index = start_index + int(per_page)
-    result["matches"] = result["matches"][start_index:end_index]
-
+    result = search.search(pattern, config, per_page, page)
     return result
 
 @app.route('/')
