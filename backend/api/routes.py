@@ -1,3 +1,4 @@
+#!/usr/bin/python3.8
 import base64
 import json
 import os

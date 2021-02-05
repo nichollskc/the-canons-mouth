@@ -1,3 +1,4 @@
+#!/usr/bin/python3.8
 import subprocess
 
 from api import text_info
