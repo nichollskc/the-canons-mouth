@@ -38,9 +38,10 @@ def awk_search(pattern, config):
 
     matches = []
     for text in config['selected_texts']:
+        full_filename = "backend/texts/search/" + text + ".txt"
         result = subprocess.run(['backend/api/exact_match.sh',
                                  pattern,
-                                 f'backend/texts/search/{text}.txt',
+                                 full_filename,
                                  ignore_case_arg],
                                 stdout=subprocess.PIPE)
         output = result.stdout.decode('utf-8')
