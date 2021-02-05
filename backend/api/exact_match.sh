@@ -2,9 +2,10 @@
 
 PATTERN=$1
 FILENAME=$2
-IGNORECASEARG=$3
+MAX_MATCH_INDEX=$3
+IGNORECASEARG=$4
 
-gawk -v PATTERN="$PATTERN" -v FILENAME="$FILENAME" -v BUFFER=2 $IGNORECASEARG\
+gawk -v PATTERN="$PATTERN" -v FILENAME="$FILENAME" -v BUFFER=2 -v MAX_MATCH_INDEX=$MAX_MATCH_INDEX $IGNORECASEARG\
     'function join_with_seps(array, separray, start, end,     result, j)
      {
          result = array[start]
@@ -51,8 +52,12 @@ gawk -v PATTERN="$PATTERN" -v FILENAME="$FILENAME" -v BUFFER=2 $IGNORECASEARG\
      BEGIN {
              OFS="===";
              ORS="\nMATCHEND\n";
+             NUMMATCHES=0;
            }
            {
+             if (NUMMATCHES > MAX_MATCH_INDEX) {
+                exit 0;
+             }
              add_to_line_array(RAW_LINES, $0);
              SHIFT=max(0, BUFFER*2 + 1 - NR);
              shift_array(RAW_LINES, SHIFT, BUFFER*2 + 1, LINES);
@@ -65,6 +70,7 @@ gawk -v PATTERN="$PATTERN" -v FILENAME="$FILENAME" -v BUFFER=2 $IGNORECASEARG\
              LINENUMBER=max(NR - 2, MATCHINDEX) - 1;
              NUM_MATCHES=split(LINES[MATCHINDEX], line_parts, PATTERN, seps);
              for (i in seps) {
+                 NUMMATCHES += 1;
                  print FILENAME,
                        lines_before(LINES, NR) "\n" join_with_seps(line_parts, seps, 1, i, PATTERN),
                        seps[i],
