@@ -9,6 +9,8 @@ import flask
 from api import app
 from api import search
 
+print("HERE!")
+
 @app.route("/time")
 def get_current_time():
     return {"time": time.time()}
