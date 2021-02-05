@@ -4,7 +4,7 @@ from api import text_info
 
 def search(pattern, config):
     if len(pattern) > 1:
-        match_dicts = awk_search(pattern)
+        match_dicts = awk_search(pattern, config)
         result = {"matches": match_dicts, "num_matches": len(match_dicts)}
     else:
         result = {"matches": [], "num_matches": 0}
@@ -28,14 +28,18 @@ def search(pattern, config):
     return result
 
 
-def awk_search(pattern):
-    result = subprocess.run(['backend/api/exact_match.sh',
-                             pattern,
-                             'backend/texts/search/mabinogion.txt'],
-                            stdout=subprocess.PIPE)
-    output = result.stdout.decode('utf-8')
+def awk_search(pattern, config):
+    print(config)
+    matches = []
+    for text in config['selected_texts']:
+        result = subprocess.run(['backend/api/exact_match.sh',
+                                 pattern,
+                                 f'backend/texts/search/{text}.txt'],
+                                stdout=subprocess.PIPE)
+        output = result.stdout.decode('utf-8')
+        text_matches = output.split('\nMATCHEND\n')[:-1]
 
-    matches = output.split('\nMATCHEND\n')[:-1]
+        matches.extend(text_matches)
     match_dicts = []
 
     for match_index, match in enumerate(matches):
