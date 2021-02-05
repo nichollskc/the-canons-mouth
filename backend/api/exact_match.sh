@@ -61,7 +61,7 @@ awk -v PATTERN="$PATTERN" -v FILENAME="$FILENAME" -v BUFFER=2 \
 #             for (j = 1; j <= 5; j++) { print RAW_LINES[j] };
 #             print MATCHINDEX;
              MATCHINDEX=min(BUFFER + 1, NR);
-             LINENUMBER=max(NR - 2, MATCHINDEX);
+             LINENUMBER=max(NR - 2, MATCHINDEX) - 1;
              NUM_MATCHES=split(LINES[MATCHINDEX], line_parts, PATTERN, seps);
              for (i in seps) {
                  print FILENAME,

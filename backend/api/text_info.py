@@ -1,6 +1,6 @@
 import json
 
-SEARCH_DIR = "./backend/texts/tokenized/"
+SEARCH_DIR = "backend/texts/search/"
 
 def construct_text_info_dict():
     with open("backend/config.json", 'r') as f:
