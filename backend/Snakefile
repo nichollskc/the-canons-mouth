@@ -27,7 +27,7 @@ rule txt_to_searchable:
         chapters="texts/chapters/{name}.json",
     run:
         import process_texts as pt
-        pt.process_txt_for_search(input.txt, output.txt, output.chapters)
+        pt.process_txt_for_search(input.txt, output.txt, output.chapters, wildcards.name)
 
 rule txt_to_html:
     input:
@@ -65,16 +65,16 @@ rule add_sentence_breaks_chapters:
 
 rule text_props_js:
     output:
-        js="src/texts.js"
+        js="../frontend/src/texts.js"
     run:
         import process_texts as pt
         pt.write_text_prop_dict_js(config, output.js)
 
 rule all_js:
     input:
-        expand("src/texts/{name}.js",
+        expand("../frontend/src/texts/{name}.js",
                name=config['texts'].keys()),
-        texts="src/texts.js",
+        texts="../frontend/src/texts.js",
 
 rule all_texts:
     input:

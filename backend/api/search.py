@@ -21,6 +21,25 @@ def search(pattern, config, per_page, page):
 
     return result
 
+def exact_matches(pattern, filename, max_match_index, ignore_case_arg):
+    result = subprocess.run(['backend/api/exact_match.sh',
+                             pattern,
+                             filename,
+                             max_match_index,
+                             ignore_case_arg],
+                            stdout=subprocess.PIPE)
+    output = result.stdout.decode('utf-8')
+    text_matches = output.split('\nMATCHEND\n')[:-1]
+    return text_matches
+
+def quick_count_matches(pattern, filename, grep_ignore_case_arg):
+    result = subprocess.run(['backend/api/count_matches.sh',
+                             pattern,
+                             filename,
+                             grep_ignore_case_arg],
+                            stdout=subprocess.PIPE)
+    output = result.stdout.decode('utf-8')
+    return int(output)
 
 def awk_search(pattern, config, start_index, end_index):
     print(config)
@@ -35,28 +54,17 @@ def awk_search(pattern, config, start_index, end_index):
     counts_by_text = {text_id: 0 for text_id in text_info.TEXT_INFO.keys()}
     total_matches = 0
     for text in config['selected_texts']:
+        text_dict = text_info.TEXT_INFO[text]
+        full_filename = text_dict["search_filename"]
+
         max_match_index = str(end_index - len(matches))
-        full_filename = "backend/texts/search/" + text + ".txt"
-        result = subprocess.run(['backend/api/exact_match.sh',
-                                 pattern,
-                                 full_filename,
-                                 max_match_index,
-                                 ignore_case_arg],
-                                stdout=subprocess.PIPE)
-        output = result.stdout.decode('utf-8')
-        text_matches = output.split('\nMATCHEND\n')[:-1]
+        text_matches = exact_matches(pattern, full_filename, max_match_index, ignore_case_arg)
 
         matches.extend(text_matches)
 
-        result = subprocess.run(['backend/api/count_matches.sh',
-                                 pattern,
-                                 full_filename,
-                                 grep_ignore_case_arg],
-                                stdout=subprocess.PIPE)
-        output = result.stdout.decode('utf-8')
-        print(output)
-        counts_by_text[text] = int(output)
-        total_matches += int(output)
+        count = quick_count_matches(pattern, full_filename, grep_ignore_case_arg)
+        counts_by_text[text] = count
+        total_matches += count
     match_dicts = []
 
     print("Finished awk search")

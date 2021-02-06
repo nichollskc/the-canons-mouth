@@ -7,18 +7,24 @@ def construct_text_info_dict():
     with open("backend/config.json", 'r') as f:
         config = json.load(f)
 
-    text_info = config["texts"]
-    for text_id in text_info.keys():
+    text_info = config["texts"].copy()
+    for text_id in config["texts"].keys():
         text_dict = text_info[text_id]
         text_dict["search_filename"] = SEARCH_DIR + text_id + ".txt"
 
         try:
             with open(f"backend/texts/chapters/{text_id}.json", 'r') as f:
-                chapter_starts = json.load(f)
+                chapters = json.load(f)
         except FileNotFoundError:
-            chapter_starts = []
+            chapters = {}
 
-        text_dict["chapter_starts"] = chapter_starts
+        text_dict["chapters"] = chapters
+
+        for chapter_id, chapter_info in chapters.items():
+            text_info[chapter_info["full_chapter_id"]] = {
+                "search_filename": chapter_info["chapter_txt"],
+                "full_name": text_dict["full_name"] + ": " + chapter_info["chapter_name"]
+            }
 
     text_info["unknown_text"] = {
         "full_name" : "Unknown text ID",
@@ -50,4 +56,3 @@ def add_text_info_to_match(match):
     match["text_id"] = text_id
     text_info = TEXT_INFO[text_id]
     match["text_fullname"] = text_info["full_name"]
-    match["chapter"] = find_chapter_name(match["start_line"], text_info)
