@@ -78,7 +78,7 @@ const CanonText = (props) => {
                    </div>
                </Col>
                <Col xs={9}>
-                   <SearchPage perPage={50} selected_texts={checkedItems} updateCountsByText={updateCountsByText}/>
+                   <SearchPage perPage={20} selected_texts={checkedItems} updateCountsByText={updateCountsByText}/>
                </Col>
            </Row>
         </Container>
