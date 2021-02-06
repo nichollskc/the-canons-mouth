@@ -1,0 +1,222 @@
+{
+  "sonnets": {
+    "chapter_name": "Sonnets",
+    "chapter_number": 0,
+    "chapter_txt": "texts/search/shakespeare___sonnets.txt"
+  },
+  "all-s-well-that-ends-well": {
+    "chapter_name": "All's Well That Ends Well",
+    "chapter_number": 1,
+    "chapter_txt": "texts/search/shakespeare___all-s-well-that-ends-well.txt"
+  },
+  "antony-and-cleopatra": {
+    "chapter_name": "Antony and Cleopatra",
+    "chapter_number": 2,
+    "chapter_txt": "texts/search/shakespeare___antony-and-cleopatra.txt"
+  },
+  "as-you-like-it": {
+    "chapter_name": "As You Like It",
+    "chapter_number": 3,
+    "chapter_txt": "texts/search/shakespeare___as-you-like-it.txt"
+  },
+  "the-comedy-of-errors": {
+    "chapter_name": "The Comedy of Errors",
+    "chapter_number": 4,
+    "chapter_txt": "texts/search/shakespeare___the-comedy-of-errors.txt"
+  },
+  "coriolanus": {
+    "chapter_name": "Coriolanus",
+    "chapter_number": 5,
+    "chapter_txt": "texts/search/shakespeare___coriolanus.txt"
+  },
+  "cymbeline": {
+    "chapter_name": "Cymbeline",
+    "chapter_number": 6,
+    "chapter_txt": "texts/search/shakespeare___cymbeline.txt"
+  },
+  "hamlet": {
+    "chapter_name": "Hamlet",
+    "chapter_number": 7,
+    "chapter_txt": "texts/search/shakespeare___hamlet.txt"
+  },
+  "henry-iv-part-1": {
+    "chapter_name": "Henry IV, Part 1",
+    "chapter_number": 8,
+    "chapter_txt": "texts/search/shakespeare___henry-iv-part-1.txt"
+  },
+  "henry-iv-part-2": {
+    "chapter_name": "Henry IV, Part 2",
+    "chapter_number": 9,
+    "chapter_txt": "texts/search/shakespeare___henry-iv-part-2.txt"
+  },
+  "henry-v": {
+    "chapter_name": "Henry V",
+    "chapter_number": 10,
+    "chapter_txt": "texts/search/shakespeare___henry-v.txt"
+  },
+  "henry-vi-part-1": {
+    "chapter_name": "Henry VI, Part 1",
+    "chapter_number": 11,
+    "chapter_txt": "texts/search/shakespeare___henry-vi-part-1.txt"
+  },
+  "henry-vi-part-2": {
+    "chapter_name": "Henry VI, Part 2",
+    "chapter_number": 12,
+    "chapter_txt": "texts/search/shakespeare___henry-vi-part-2.txt"
+  },
+  "henry-vi-part-3": {
+    "chapter_name": "Henry VI, Part 3",
+    "chapter_number": 13,
+    "chapter_txt": "texts/search/shakespeare___henry-vi-part-3.txt"
+  },
+  "henry-viii": {
+    "chapter_name": "Henry VIII",
+    "chapter_number": 14,
+    "chapter_txt": "texts/search/shakespeare___henry-viii.txt"
+  },
+  "king-john": {
+    "chapter_name": "King John",
+    "chapter_number": 15,
+    "chapter_txt": "texts/search/shakespeare___king-john.txt"
+  },
+  "julius-caesar": {
+    "chapter_name": "Julius Caesar",
+    "chapter_number": 16,
+    "chapter_txt": "texts/search/shakespeare___julius-caesar.txt"
+  },
+  "king-lear": {
+    "chapter_name": "King Lear",
+    "chapter_number": 17,
+    "chapter_txt": "texts/search/shakespeare___king-lear.txt"
+  },
+  "love-s-labour-s-lost": {
+    "chapter_name": "Love's Labour's Lost",
+    "chapter_number": 18,
+    "chapter_txt": "texts/search/shakespeare___love-s-labour-s-lost.txt"
+  },
+  "macbeth": {
+    "chapter_name": "Macbeth",
+    "chapter_number": 19,
+    "chapter_txt": "texts/search/shakespeare___macbeth.txt"
+  },
+  "measure-for-measure": {
+    "chapter_name": "Measure for Measure",
+    "chapter_number": 20,
+    "chapter_txt": "texts/search/shakespeare___measure-for-measure.txt"
+  },
+  "the-merchant-of-venice": {
+    "chapter_name": "The Merchant of Venice",
+    "chapter_number": 21,
+    "chapter_txt": "texts/search/shakespeare___the-merchant-of-venice.txt"
+  },
+  "the-merry-wives-of-windsor": {
+    "chapter_name": "The Merry Wives of Windsor",
+    "chapter_number": 22,
+    "chapter_txt": "texts/search/shakespeare___the-merry-wives-of-windsor.txt"
+  },
+  "a-midsummer-night-s-dream": {
+    "chapter_name": "A Midsummer Night's Dream",
+    "chapter_number": 23,
+    "chapter_txt": "texts/search/shakespeare___a-midsummer-night-s-dream.txt"
+  },
+  "much-ado-about-nothing": {
+    "chapter_name": "Much Ado About Nothing",
+    "chapter_number": 24,
+    "chapter_txt": "texts/search/shakespeare___much-ado-about-nothing.txt"
+  },
+  "othello": {
+    "chapter_name": "Othello",
+    "chapter_number": 25,
+    "chapter_txt": "texts/search/shakespeare___othello.txt"
+  },
+  "pericles-prince-of-tyre": {
+    "chapter_name": "Pericles, Prince of Tyre",
+    "chapter_number": 26,
+    "chapter_txt": "texts/search/shakespeare___pericles-prince-of-tyre.txt"
+  },
+  "richard-ii": {
+    "chapter_name": "Richard II",
+    "chapter_number": 27,
+    "chapter_txt": "texts/search/shakespeare___richard-ii.txt"
+  },
+  "richard-iii": {
+    "chapter_name": "Richard III",
+    "chapter_number": 28,
+    "chapter_txt": "texts/search/shakespeare___richard-iii.txt"
+  },
+  "romeo-and-juliet": {
+    "chapter_name": "Romeo and Juliet",
+    "chapter_number": 29,
+    "chapter_txt": "texts/search/shakespeare___romeo-and-juliet.txt"
+  },
+  "the-taming-of-the-shrew": {
+    "chapter_name": "The Taming of the Shrew",
+    "chapter_number": 30,
+    "chapter_txt": "texts/search/shakespeare___the-taming-of-the-shrew.txt"
+  },
+  "the-tempest": {
+    "chapter_name": "The Tempest",
+    "chapter_number": 31,
+    "chapter_txt": "texts/search/shakespeare___the-tempest.txt"
+  },
+  "timon-of-athens": {
+    "chapter_name": "Timon of Athens",
+    "chapter_number": 32,
+    "chapter_txt": "texts/search/shakespeare___timon-of-athens.txt"
+  },
+  "titus-andronicus": {
+    "chapter_name": "Titus Andronicus",
+    "chapter_number": 33,
+    "chapter_txt": "texts/search/shakespeare___titus-andronicus.txt"
+  },
+  "troilus-and-cressida": {
+    "chapter_name": "Troilus and Cressida",
+    "chapter_number": 34,
+    "chapter_txt": "texts/search/shakespeare___troilus-and-cressida.txt"
+  },
+  "twelfth-night": {
+    "chapter_name": "Twelfth Night",
+    "chapter_number": 35,
+    "chapter_txt": "texts/search/shakespeare___twelfth-night.txt"
+  },
+  "the-two-gentlemen-of-verona": {
+    "chapter_name": "The Two Gentlemen of Verona",
+    "chapter_number": 36,
+    "chapter_txt": "texts/search/shakespeare___the-two-gentlemen-of-verona.txt"
+  },
+  "the-two-noble-kinsmen": {
+    "chapter_name": "The Two Noble Kinsmen",
+    "chapter_number": 37,
+    "chapter_txt": "texts/search/shakespeare___the-two-noble-kinsmen.txt"
+  },
+  "the-winter-s-tale": {
+    "chapter_name": "The Winter's Tale",
+    "chapter_number": 38,
+    "chapter_txt": "texts/search/shakespeare___the-winter-s-tale.txt"
+  },
+  "a-lover-s-complaint": {
+    "chapter_name": "A Lover's Complaint",
+    "chapter_number": 39,
+    "chapter_txt": "texts/search/shakespeare___a-lover-s-complaint.txt"
+  },
+  "the-passionate-pilgrim": {
+    "chapter_name": "The Passionate Pilgrim",
+    "chapter_number": 40,
+    "chapter_txt": "texts/search/shakespeare___the-passionate-pilgrim.txt"
+  },
+  "the-phoenix-and-the-turtle": {
+    "chapter_name": "The Phoenix and the Turtle",
+    "chapter_number": 41,
+    "chapter_txt": "texts/search/shakespeare___the-phoenix-and-the-turtle.txt"
+  },
+  "the-rape-of-lucrece": {
+    "chapter_name": "The Rape of Lucrece",
+    "chapter_number": 42,
+    "chapter_txt": "texts/search/shakespeare___the-rape-of-lucrece.txt"
+  },
+  "venus-and-adonis": {
+    "chapter_name": "Venus and Adonis",
+    "chapter_number": 43,
+    "chapter_txt": "texts/search/shakespeare___venus-and-adonis.txt"
+  }
+}
