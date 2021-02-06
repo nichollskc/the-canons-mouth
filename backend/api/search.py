@@ -3,6 +3,8 @@ import subprocess
 
 from api import text_info
 
+from tempfile import NamedTemporaryFile
+
 def search(pattern, config, per_page, page):
     # Restrict to only the matches required for this page
     start_index = int(page) * int(per_page)
@@ -48,12 +50,19 @@ class Searcher:
         else:
             ignore_case_arg = "0"
 
-        result = subprocess.run(['backend/api/exact_match_list.sh',
-                                 self.pattern,
-                                 ignore_case_arg,
-                                 self.get_max_matches_left()] + self.filenames,
-                                stdout=subprocess.PIPE)
-        output = result.stdout.decode('utf-8')
+
+        with NamedTemporaryFile() as f:
+            print(f.name)
+            subprocess.check_call(['bash',
+                                   'backend/api/exact_match_list.sh',
+                                   self.pattern,
+                                   ignore_case_arg,
+                                   self.get_max_matches_left(),
+                                   f.name] + self.filenames,
+                                   stdout=f)
+            f.seek(0)
+            output = f.read().decode('utf-8')
+
         text_matches = output.split('\nMATCHEND\n')[:-1]
         self.matches.extend(text_matches)
 
