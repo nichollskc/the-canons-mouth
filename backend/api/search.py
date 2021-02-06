@@ -1,6 +1,7 @@
 #!/usr/bin/python3.8
 import subprocess
 
+from subprocess import Popen, PIPE
 from api import text_info
 
 from tempfile import NamedTemporaryFile
@@ -36,6 +37,7 @@ class Searcher:
         self.text_ids = []
 
         self.matches = []
+        self.match_dicts = []
         self.total_matches = 0
         self.counts_by_text = {text_id: 0
                                for text_id in text_info.TEXT_INFO.keys()}
@@ -44,27 +46,56 @@ class Searcher:
         max_match_index = str(self.end_index - len(self.matches))
         return max_match_index
 
+    def process_match(self, match_lines, match_index):
+        match = ''.join(match_lines)
+        fields = match.split('===')
+        assert len(fields) == 6, "Expecting 6 fields, found " + str(len(fields)) + ". Match is " + str(match)
+        match_dict = {
+            'errors': 0,
+            'length': len(self.pattern),
+            'key': "match_" + str(match_index),
+            'text': fields[0],
+            'before': fields[1],
+            'matching': fields[2],
+            'after': fields[3],
+            'start_line': int(fields[4]),
+            'end_line': int(fields[5]),
+        }
+        text_info.add_text_info_to_match(match_dict)
+        return match_dict
+
     def exact_matches(self):
         if self.config['case_insensitive']:
             ignore_case_arg = "1"
         else:
             ignore_case_arg = "0"
 
+        awk_matches = 0
 
-        with NamedTemporaryFile() as f:
-            print(f.name)
-            subprocess.check_call(['bash',
-                                   'backend/api/exact_match_list.sh',
-                                   self.pattern,
-                                   ignore_case_arg,
-                                   self.get_max_matches_left(),
-                                   f.name] + self.filenames,
-                                   stdout=f)
-            f.seek(0)
-            output = f.read().decode('utf-8')
+        command = ['bash',
+                   'backend/api/exact_match_list.sh',
+                   self.pattern,
+                   ignore_case_arg,
+                   self.get_max_matches_left()] + self.filenames
+        print(' '.join(command))
+        with subprocess.Popen(command,
+                              stdout=subprocess.PIPE,
+                              universal_newlines=True) as proc:
+            match_lines = []
+            for line in proc.stdout:
+                if line == 'MATCHEND\n':
+                    if awk_matches >= self.start_index:
+                        match_dict = self.process_match(match_lines, awk_matches)
+                        self.match_dicts.append(match_dict)
+                    awk_matches += 1
+                    match_lines = []
+                    if awk_matches >= self.end_index:
+                        print("Found enough matches!")
+                        proc.terminate()
+                        break
+                else:
+                    match_lines.append(line)
 
-        text_matches = output.split('\nMATCHEND\n')[:-1]
-        self.matches.extend(text_matches)
 
     def quick_count_matches(self):
         if self.config['case_insensitive']:
@@ -110,28 +141,8 @@ def awk_search(pattern, config, start_index, end_index):
     print(searcher.counts_by_text)
     print(len(searcher.matches))
 
-    match_dicts = []
-
     print("Finished awk search")
     print(searcher.counts_by_text)
 
-    restricted_matches = searcher.matches[start_index:end_index]
-    for match_index, match in enumerate(restricted_matches):
-        fields = match.split('===')
-        assert len(fields) == 6, "Expecting 6 fields, found " + str(len(fields)) + ". Match is " + str(match)
-        match_dict = {
-            'errors': 0,
-            'length': len(pattern),
-            'key': "match_" + str(match_index),
-            'text': fields[0],
-            'before': fields[1],
-            'matching': fields[2],
-            'after': fields[3],
-            'start_line': int(fields[4]),
-            'end_line': int(fields[5]),
-        }
-        text_info.add_text_info_to_match(match_dict)
-        match_dicts.append(match_dict)
-
-    return searcher.total_matches, searcher.counts_by_text, match_dicts
+    return searcher.total_matches, searcher.counts_by_text, searcher.match_dicts
 
