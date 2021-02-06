@@ -85,8 +85,6 @@ def awk_search(pattern, config, start_index, end_index):
         text_dict = text_info.TEXT_INFO[text]
         if len(text_dict["chapters"]) > 0:
             for chapter_info in text_dict["chapters"].values():
-                print("Searching chapter")
-                print(chapter_info)
                 searcher.search_file(chapter_info["search_filename"], text)
         else:
             searcher.search_file(text_dict["search_filename"], text)
