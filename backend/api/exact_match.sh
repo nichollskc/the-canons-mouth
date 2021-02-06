@@ -5,7 +5,13 @@ FILENAME=$2
 MAX_MATCH_INDEX=$3
 IGNORECASEARG=$4
 
-gawk -v PATTERN="$PATTERN" -v FILENAME="$FILENAME" -v BUFFER=2 -v MAX_MATCH_INDEX=$MAX_MATCH_INDEX $IGNORECASEARG\
+if [ "$IGNORECASEARG" -eq "0" ]; then
+    FULLIGNORECASEARG=""
+else
+    FULLIGNORECASEARG="-v IGNORECASE=1"
+fi
+
+gawk -v PATTERN="$PATTERN" -v FILENAME="$FILENAME" -v BUFFER=2 -v MAX_MATCH_INDEX=$MAX_MATCH_INDEX $FULLIGNORECASEARG \
     'function join_with_seps(array, separray, start, end,     result, j)
      {
          result = array[start]
