@@ -11,8 +11,7 @@ const ResultList = ({resultList=[]}) => {
                         <a href={"/texts/" + data.text_id + ".html#line_" + data.start_line}>
                         <pre>{data.before}<b>{data.matching}</b>{data.after}</pre>
                         <div class="resultLabel">
-                            <p>{data.text_fullname}: {data.chapter}</p>
-                            <p>Errors:{data.errors}</p>
+                            <p>{data.text_fullname}</p>
                         </div>
                         </a>
                     </div>
