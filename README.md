@@ -2,6 +2,13 @@
 
 A tool to search through a collection of archaic texts (the canon).
 
+# Rebuild static site
+
+In frontend/
+npm install
+npm run build
+Then commit changes to frontend/build/
+
 # TODO
 
 * Combine Malory parts into single text
