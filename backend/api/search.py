@@ -13,6 +13,8 @@ def search(pattern, config, per_page, page):
         result = {"matches": match_dicts, "num_matches": num_matches}
     else:
         result = {"matches": [], "num_matches": 0}
+        searcher = Searcher(pattern, config, start_index, end_index)
+        counts_by_text = searcher.counts_by_text
 
     print(result)
     print(counts_by_text)
