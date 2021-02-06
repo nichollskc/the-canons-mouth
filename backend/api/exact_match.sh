@@ -55,19 +55,14 @@ gawk -v PATTERN="$PATTERN" -v FILENAME="$FILENAME" -v BUFFER=2 -v MAX_MATCH_INDE
              NUMMATCHES=0;
            }
            {
+             add_to_line_array(LINES, $0);
+            }
+     NR > 4 {
              if (NUMMATCHES > MAX_MATCH_INDEX) {
                 exit 0;
              }
-             add_to_line_array(RAW_LINES, $0);
-             SHIFT=max(0, BUFFER*2 + 1 - NR);
-             shift_array(RAW_LINES, SHIFT, BUFFER*2 + 1, LINES);
-#             print SHIFT;
-#             print NR;
-#             for (j = 1; j <= 5; j++) { print LINES[j] };
-#             for (j = 1; j <= 5; j++) { print RAW_LINES[j] };
-#             print MATCHINDEX;
-             MATCHINDEX=min(BUFFER + 1, NR);
-             LINENUMBER=max(NR - 2, MATCHINDEX) - 1;
+             MATCHINDEX=BUFFER + 1;
+             LINENUMBER=NR - 3;
              NUM_MATCHES=split(LINES[MATCHINDEX], line_parts, PATTERN, seps);
              for (i in seps) {
                  NUMMATCHES += 1;
