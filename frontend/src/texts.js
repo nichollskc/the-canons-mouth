@@ -1,14 +1,8 @@
 const texts = [
   {
-    "name": "malory1",
-    "full_name": "Malory Part 1",
-    "checkbox_key": "checkbox_malory1",
-    "startsChecked": true
-  },
-  {
-    "name": "malory2",
-    "full_name": "Malory Part 2",
-    "checkbox_key": "checkbox_malory2",
+    "name": "malory",
+    "full_name": "Malory",
+    "checkbox_key": "checkbox_malory",
     "startsChecked": true
   },
   {
