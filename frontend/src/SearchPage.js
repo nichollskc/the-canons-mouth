@@ -34,7 +34,7 @@ const SearchPage = (props) => {
                   'pattern': searchKeyword,
                   'config': {'selected_texts': Array.from(props.selected_texts),
                              'max_errors': parseInt(maxErrors),
-                             'case_insensitve': caseInsensitive,
+                             'case_insensitive': caseInsensitive,
                              'ignored_chars': ignoredCharacters },
         };
         console.log(obj);
@@ -99,16 +99,6 @@ const SearchPage = (props) => {
                     <label key="case_insensitive_checkbox">
                         <Checkbox name="case_insensitive" checked={caseInsensitive} onChange={handleCaseCheckboxChange} />
                         <span> Case insensitive</span>
-                    </label>
-                </Col>
-                <Col>
-                    <span>Errors allowed </span>
-                    <input id="max_errors" size="1" value={maxErrors} onChange={(e) => setMaxErrors(e.target.value.replace(/\D/,''))} />
-                </Col>
-                <Col>
-                    <label>
-                        <span>Ignore </span>
-                        <input id="ignored_characters" size="4" value={ignoredCharacters} onChange={(e) => setIgnoredCharacters(e.target.value)} />
                     </label>
                 </Col>
             </Row>
