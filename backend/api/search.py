@@ -21,56 +21,80 @@ def search(pattern, config, per_page, page):
 
     return result
 
-def exact_matches(pattern, filename, max_match_index, ignore_case_arg):
-    result = subprocess.run(['backend/api/exact_match.sh',
-                             pattern,
-                             filename,
-                             max_match_index,
-                             ignore_case_arg],
-                            stdout=subprocess.PIPE)
-    output = result.stdout.decode('utf-8')
-    text_matches = output.split('\nMATCHEND\n')[:-1]
-    return text_matches
+class Searcher:
+    def __init__(self, pattern, config, start_index, end_index):
+        self.pattern = pattern
+        self.config = config
+        self.start_index = start_index
+        self.end_index = end_index
 
-def quick_count_matches(pattern, filename, grep_ignore_case_arg):
-    result = subprocess.run(['backend/api/count_matches.sh',
-                             pattern,
-                             filename,
-                             grep_ignore_case_arg],
-                            stdout=subprocess.PIPE)
-    output = result.stdout.decode('utf-8')
-    return int(output)
+        self.matches = []
+        self.total_matches = 0
+        self.counts_by_text = {text_id: 0
+                               for text_id in text_info.TEXT_INFO.keys()}
+
+    def get_max_matches_left(self):
+        max_match_index = str(self.end_index - len(self.matches))
+        return max_match_index
+
+    def exact_matches(self, filename):
+        if self.config['case_insensitive']:
+            ignore_case_arg = "-v IGNORECASE=1"
+        else:
+            ignore_case_arg = ""
+
+        result = subprocess.run(['backend/api/exact_match.sh',
+                                 self.pattern,
+                                 filename,
+                                 self.get_max_matches_left(),
+                                 ignore_case_arg],
+                                stdout=subprocess.PIPE)
+        output = result.stdout.decode('utf-8')
+        text_matches = output.split('\nMATCHEND\n')[:-1]
+        return text_matches
+
+    def quick_count_matches(self, filename):
+        if self.config['case_insensitive']:
+            grep_ignore_case_arg = "-i"
+        else:
+            grep_ignore_case_arg = ""
+
+        result = subprocess.run(['backend/api/count_matches.sh',
+                                 self.pattern,
+                                 filename,
+                                 grep_ignore_case_arg],
+                                stdout=subprocess.PIPE)
+        output = result.stdout.decode('utf-8')
+        return int(output)
+
+    def search_file(self, filename, text_id):
+        text_matches = self.exact_matches(filename)
+        self.matches.extend(text_matches)
+
+        count = self.quick_count_matches(filename)
+        self.counts_by_text[text_id] += count
+        self.total_matches += count
 
 def awk_search(pattern, config, start_index, end_index):
     print(config)
-    if config['case_insensitive']:
-        ignore_case_arg = "-v IGNORECASE=1"
-        grep_ignore_case_arg = "-i"
-    else:
-        ignore_case_arg = ""
-        grep_ignore_case_arg = ""
+    searcher = Searcher(pattern, config, start_index, end_index)
 
-    matches = []
-    counts_by_text = {text_id: 0 for text_id in text_info.TEXT_INFO.keys()}
-    total_matches = 0
     for text in config['selected_texts']:
         text_dict = text_info.TEXT_INFO[text]
-        full_filename = text_dict["search_filename"]
+        if len(text_dict["chapters"]) > 0:
+            for chapter_info in text_dict["chapters"].values():
+                print("Searching chapter")
+                print(chapter_info)
+                searcher.search_file(chapter_info["search_filename"], text)
+        else:
+            searcher.search_file(text_dict["search_filename"], text)
 
-        max_match_index = str(end_index - len(matches))
-        text_matches = exact_matches(pattern, full_filename, max_match_index, ignore_case_arg)
-
-        matches.extend(text_matches)
-
-        count = quick_count_matches(pattern, full_filename, grep_ignore_case_arg)
-        counts_by_text[text] = count
-        total_matches += count
     match_dicts = []
 
     print("Finished awk search")
-    print(counts_by_text)
+    print(searcher.counts_by_text)
 
-    restricted_matches = matches[start_index:end_index]
+    restricted_matches = searcher.matches[start_index:end_index]
     for match_index, match in enumerate(restricted_matches):
         fields = match.split('===')
         assert len(fields) == 6, "Expecting 6 fields, found " + str(len(fields)) + ". Match is " + str(match)
@@ -88,5 +112,5 @@ def awk_search(pattern, config, start_index, end_index):
         text_info.add_text_info_to_match(match_dict)
         match_dicts.append(match_dict)
 
-    return total_matches, counts_by_text, match_dicts
+    return searcher.total_matches, searcher.counts_by_text, match_dicts
 

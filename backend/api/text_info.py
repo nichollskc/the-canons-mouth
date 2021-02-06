@@ -22,7 +22,7 @@ def construct_text_info_dict():
 
         for chapter_id, chapter_info in chapters.items():
             text_info[chapter_info["full_chapter_id"]] = {
-                "search_filename": chapter_info["chapter_txt"],
+                "search_filename": chapter_info["search_filename"],
                 "full_name": text_dict["full_name"] + ": " + chapter_info["chapter_name"]
             }
 

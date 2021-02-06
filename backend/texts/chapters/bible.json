@@ -2,330 +2,385 @@
   "genesis": {
     "chapter_name": "Genesis",
     "chapter_number": 0,
+    "search_filename": "backend/texts/search/bible___genesis.txt",
     "full_chapter_id": "bible___genesis",
     "chapter_txt": "texts/search/bible___genesis.txt"
   },
   "exodus": {
     "chapter_name": "Exodus",
     "chapter_number": 1,
+    "search_filename": "backend/texts/search/bible___exodus.txt",
     "full_chapter_id": "bible___exodus",
     "chapter_txt": "texts/search/bible___exodus.txt"
   },
   "leviticus": {
     "chapter_name": "Leviticus",
     "chapter_number": 2,
+    "search_filename": "backend/texts/search/bible___leviticus.txt",
     "full_chapter_id": "bible___leviticus",
     "chapter_txt": "texts/search/bible___leviticus.txt"
   },
   "numbers": {
     "chapter_name": "Numbers",
     "chapter_number": 3,
+    "search_filename": "backend/texts/search/bible___numbers.txt",
     "full_chapter_id": "bible___numbers",
     "chapter_txt": "texts/search/bible___numbers.txt"
   },
   "deuteronomy": {
     "chapter_name": "Deuteronomy",
     "chapter_number": 4,
+    "search_filename": "backend/texts/search/bible___deuteronomy.txt",
     "full_chapter_id": "bible___deuteronomy",
     "chapter_txt": "texts/search/bible___deuteronomy.txt"
   },
   "joshua": {
     "chapter_name": "Joshua",
     "chapter_number": 5,
+    "search_filename": "backend/texts/search/bible___joshua.txt",
     "full_chapter_id": "bible___joshua",
     "chapter_txt": "texts/search/bible___joshua.txt"
   },
   "judges": {
     "chapter_name": "Judges",
     "chapter_number": 6,
+    "search_filename": "backend/texts/search/bible___judges.txt",
     "full_chapter_id": "bible___judges",
     "chapter_txt": "texts/search/bible___judges.txt"
   },
   "ruth": {
     "chapter_name": "Ruth",
     "chapter_number": 7,
+    "search_filename": "backend/texts/search/bible___ruth.txt",
     "full_chapter_id": "bible___ruth",
     "chapter_txt": "texts/search/bible___ruth.txt"
   },
   "samuel": {
     "chapter_name": "Samuel",
     "chapter_number": 8,
+    "search_filename": "backend/texts/search/bible___samuel.txt",
     "full_chapter_id": "bible___samuel",
     "chapter_txt": "texts/search/bible___samuel.txt"
   },
   "kings": {
     "chapter_name": "Kings",
     "chapter_number": 9,
+    "search_filename": "backend/texts/search/bible___kings.txt",
     "full_chapter_id": "bible___kings",
     "chapter_txt": "texts/search/bible___kings.txt"
   },
   "chronicles": {
     "chapter_name": "Chronicles",
     "chapter_number": 10,
+    "search_filename": "backend/texts/search/bible___chronicles.txt",
     "full_chapter_id": "bible___chronicles",
     "chapter_txt": "texts/search/bible___chronicles.txt"
   },
   "ezra": {
     "chapter_name": "Ezra",
     "chapter_number": 11,
+    "search_filename": "backend/texts/search/bible___ezra.txt",
     "full_chapter_id": "bible___ezra",
     "chapter_txt": "texts/search/bible___ezra.txt"
   },
   "nehemiah": {
     "chapter_name": "Nehemiah",
     "chapter_number": 12,
+    "search_filename": "backend/texts/search/bible___nehemiah.txt",
     "full_chapter_id": "bible___nehemiah",
     "chapter_txt": "texts/search/bible___nehemiah.txt"
   },
   "esther": {
     "chapter_name": "Esther",
     "chapter_number": 13,
+    "search_filename": "backend/texts/search/bible___esther.txt",
     "full_chapter_id": "bible___esther",
     "chapter_txt": "texts/search/bible___esther.txt"
   },
   "job": {
     "chapter_name": "Job",
     "chapter_number": 14,
+    "search_filename": "backend/texts/search/bible___job.txt",
     "full_chapter_id": "bible___job",
     "chapter_txt": "texts/search/bible___job.txt"
   },
   "psalms": {
     "chapter_name": "Psalms",
     "chapter_number": 15,
+    "search_filename": "backend/texts/search/bible___psalms.txt",
     "full_chapter_id": "bible___psalms",
     "chapter_txt": "texts/search/bible___psalms.txt"
   },
   "proverbs": {
     "chapter_name": "Proverbs",
     "chapter_number": 16,
+    "search_filename": "backend/texts/search/bible___proverbs.txt",
     "full_chapter_id": "bible___proverbs",
     "chapter_txt": "texts/search/bible___proverbs.txt"
   },
   "ecclesiastes": {
     "chapter_name": "Ecclesiastes",
     "chapter_number": 17,
+    "search_filename": "backend/texts/search/bible___ecclesiastes.txt",
     "full_chapter_id": "bible___ecclesiastes",
     "chapter_txt": "texts/search/bible___ecclesiastes.txt"
   },
   "song-of-solomon": {
     "chapter_name": "Song of Solomon",
     "chapter_number": 18,
+    "search_filename": "backend/texts/search/bible___song-of-solomon.txt",
     "full_chapter_id": "bible___song-of-solomon",
     "chapter_txt": "texts/search/bible___song-of-solomon.txt"
   },
   "isaiah": {
     "chapter_name": "Isaiah",
     "chapter_number": 19,
+    "search_filename": "backend/texts/search/bible___isaiah.txt",
     "full_chapter_id": "bible___isaiah",
     "chapter_txt": "texts/search/bible___isaiah.txt"
   },
   "jeremiah": {
     "chapter_name": "Jeremiah",
     "chapter_number": 20,
+    "search_filename": "backend/texts/search/bible___jeremiah.txt",
     "full_chapter_id": "bible___jeremiah",
     "chapter_txt": "texts/search/bible___jeremiah.txt"
   },
   "ezekiel": {
     "chapter_name": "Ezekiel",
     "chapter_number": 21,
+    "search_filename": "backend/texts/search/bible___ezekiel.txt",
     "full_chapter_id": "bible___ezekiel",
     "chapter_txt": "texts/search/bible___ezekiel.txt"
   },
   "daniel": {
     "chapter_name": "Daniel",
     "chapter_number": 22,
+    "search_filename": "backend/texts/search/bible___daniel.txt",
     "full_chapter_id": "bible___daniel",
     "chapter_txt": "texts/search/bible___daniel.txt"
   },
   "hosea": {
     "chapter_name": "Hosea",
     "chapter_number": 23,
+    "search_filename": "backend/texts/search/bible___hosea.txt",
     "full_chapter_id": "bible___hosea",
     "chapter_txt": "texts/search/bible___hosea.txt"
   },
   "joel": {
     "chapter_name": "Joel",
     "chapter_number": 24,
+    "search_filename": "backend/texts/search/bible___joel.txt",
     "full_chapter_id": "bible___joel",
     "chapter_txt": "texts/search/bible___joel.txt"
   },
   "amos": {
     "chapter_name": "Amos",
     "chapter_number": 25,
+    "search_filename": "backend/texts/search/bible___amos.txt",
     "full_chapter_id": "bible___amos",
     "chapter_txt": "texts/search/bible___amos.txt"
   },
   "obadiah": {
     "chapter_name": "Obadiah",
     "chapter_number": 26,
+    "search_filename": "backend/texts/search/bible___obadiah.txt",
     "full_chapter_id": "bible___obadiah",
     "chapter_txt": "texts/search/bible___obadiah.txt"
   },
   "jonah": {
     "chapter_name": "Jonah",
     "chapter_number": 27,
+    "search_filename": "backend/texts/search/bible___jonah.txt",
     "full_chapter_id": "bible___jonah",
     "chapter_txt": "texts/search/bible___jonah.txt"
   },
   "micah": {
     "chapter_name": "Micah",
     "chapter_number": 28,
+    "search_filename": "backend/texts/search/bible___micah.txt",
     "full_chapter_id": "bible___micah",
     "chapter_txt": "texts/search/bible___micah.txt"
   },
   "nahum": {
     "chapter_name": "Nahum",
     "chapter_number": 29,
+    "search_filename": "backend/texts/search/bible___nahum.txt",
     "full_chapter_id": "bible___nahum",
     "chapter_txt": "texts/search/bible___nahum.txt"
   },
   "habakkuk": {
     "chapter_name": "Habakkuk",
     "chapter_number": 30,
+    "search_filename": "backend/texts/search/bible___habakkuk.txt",
     "full_chapter_id": "bible___habakkuk",
     "chapter_txt": "texts/search/bible___habakkuk.txt"
   },
   "zephaniah": {
     "chapter_name": "Zephaniah",
     "chapter_number": 31,
+    "search_filename": "backend/texts/search/bible___zephaniah.txt",
     "full_chapter_id": "bible___zephaniah",
     "chapter_txt": "texts/search/bible___zephaniah.txt"
   },
   "haggai": {
     "chapter_name": "Haggai",
     "chapter_number": 32,
+    "search_filename": "backend/texts/search/bible___haggai.txt",
     "full_chapter_id": "bible___haggai",
     "chapter_txt": "texts/search/bible___haggai.txt"
   },
   "zechariah": {
     "chapter_name": "Zechariah",
     "chapter_number": 33,
+    "search_filename": "backend/texts/search/bible___zechariah.txt",
     "full_chapter_id": "bible___zechariah",
     "chapter_txt": "texts/search/bible___zechariah.txt"
   },
   "malachi": {
     "chapter_name": "Malachi",
     "chapter_number": 34,
+    "search_filename": "backend/texts/search/bible___malachi.txt",
     "full_chapter_id": "bible___malachi",
     "chapter_txt": "texts/search/bible___malachi.txt"
   },
   "matthew": {
     "chapter_name": "Matthew",
     "chapter_number": 35,
+    "search_filename": "backend/texts/search/bible___matthew.txt",
     "full_chapter_id": "bible___matthew",
     "chapter_txt": "texts/search/bible___matthew.txt"
   },
   "mark": {
     "chapter_name": "Mark",
     "chapter_number": 36,
+    "search_filename": "backend/texts/search/bible___mark.txt",
     "full_chapter_id": "bible___mark",
     "chapter_txt": "texts/search/bible___mark.txt"
   },
   "luke": {
     "chapter_name": "Luke",
     "chapter_number": 37,
+    "search_filename": "backend/texts/search/bible___luke.txt",
     "full_chapter_id": "bible___luke",
     "chapter_txt": "texts/search/bible___luke.txt"
   },
   "john": {
     "chapter_name": "John",
     "chapter_number": 55,
+    "search_filename": "backend/texts/search/bible___john.txt",
     "full_chapter_id": "bible___john",
     "chapter_txt": "texts/search/bible___john.txt"
   },
   "acts": {
     "chapter_name": "Acts",
     "chapter_number": 39,
+    "search_filename": "backend/texts/search/bible___acts.txt",
     "full_chapter_id": "bible___acts",
     "chapter_txt": "texts/search/bible___acts.txt"
   },
   "romans": {
     "chapter_name": "Romans",
     "chapter_number": 40,
+    "search_filename": "backend/texts/search/bible___romans.txt",
     "full_chapter_id": "bible___romans",
     "chapter_txt": "texts/search/bible___romans.txt"
   },
   "corinthians": {
     "chapter_name": "Corinthians",
     "chapter_number": 41,
+    "search_filename": "backend/texts/search/bible___corinthians.txt",
     "full_chapter_id": "bible___corinthians",
     "chapter_txt": "texts/search/bible___corinthians.txt"
   },
   "galatians": {
     "chapter_name": "Galatians",
     "chapter_number": 42,
+    "search_filename": "backend/texts/search/bible___galatians.txt",
     "full_chapter_id": "bible___galatians",
     "chapter_txt": "texts/search/bible___galatians.txt"
   },
   "ephesians": {
     "chapter_name": "Ephesians",
     "chapter_number": 43,
+    "search_filename": "backend/texts/search/bible___ephesians.txt",
     "full_chapter_id": "bible___ephesians",
     "chapter_txt": "texts/search/bible___ephesians.txt"
   },
   "philippians": {
     "chapter_name": "Philippians",
     "chapter_number": 44,
+    "search_filename": "backend/texts/search/bible___philippians.txt",
     "full_chapter_id": "bible___philippians",
     "chapter_txt": "texts/search/bible___philippians.txt"
   },
   "colossians": {
     "chapter_name": "Colossians",
     "chapter_number": 45,
+    "search_filename": "backend/texts/search/bible___colossians.txt",
     "full_chapter_id": "bible___colossians",
     "chapter_txt": "texts/search/bible___colossians.txt"
   },
   "thessalonians": {
     "chapter_name": "Thessalonians",
     "chapter_number": 46,
+    "search_filename": "backend/texts/search/bible___thessalonians.txt",
     "full_chapter_id": "bible___thessalonians",
     "chapter_txt": "texts/search/bible___thessalonians.txt"
   },
   "timothy": {
     "chapter_name": "Timothy",
     "chapter_number": 47,
+    "search_filename": "backend/texts/search/bible___timothy.txt",
     "full_chapter_id": "bible___timothy",
     "chapter_txt": "texts/search/bible___timothy.txt"
   },
   "titus": {
     "chapter_name": "Titus",
     "chapter_number": 48,
+    "search_filename": "backend/texts/search/bible___titus.txt",
     "full_chapter_id": "bible___titus",
     "chapter_txt": "texts/search/bible___titus.txt"
   },
   "philemon": {
     "chapter_name": "Philemon",
     "chapter_number": 49,
+    "search_filename": "backend/texts/search/bible___philemon.txt",
     "full_chapter_id": "bible___philemon",
     "chapter_txt": "texts/search/bible___philemon.txt"
   },
   "hebrews": {
     "chapter_name": "Hebrews",
     "chapter_number": 50,
+    "search_filename": "backend/texts/search/bible___hebrews.txt",
     "full_chapter_id": "bible___hebrews",
     "chapter_txt": "texts/search/bible___hebrews.txt"
   },
   "james": {
     "chapter_name": "James",
     "chapter_number": 51,
+    "search_filename": "backend/texts/search/bible___james.txt",
     "full_chapter_id": "bible___james",
     "chapter_txt": "texts/search/bible___james.txt"
   },
   "peter": {
     "chapter_name": "Peter",
     "chapter_number": 52,
+    "search_filename": "backend/texts/search/bible___peter.txt",
     "full_chapter_id": "bible___peter",
     "chapter_txt": "texts/search/bible___peter.txt"
   },
   "jude": {
     "chapter_name": "Jude",
     "chapter_number": 56,
+    "search_filename": "backend/texts/search/bible___jude.txt",
     "full_chapter_id": "bible___jude",
     "chapter_txt": "texts/search/bible___jude.txt"
   },
   "revelation": {
     "chapter_name": "Revelation",
     "chapter_number": 57,
+    "search_filename": "backend/texts/search/bible___revelation.txt",
     "full_chapter_id": "bible___revelation",
     "chapter_txt": "texts/search/bible___revelation.txt"
   }

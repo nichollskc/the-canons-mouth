@@ -80,11 +80,13 @@ def process_txt_for_search(txtfile, outfile, chapters_info_file, text_id):
         chapter_id = utils.slugify(chapter_name)
         full_chapter_id = text_id + '___' + chapter_id
         chapter_file = outfile.replace('.txt', '___' + chapter_id + '.txt')
+        full_filename = "backend/" + chapter_file
         with open(chapter_file, 'w') as f:
             f.write(chapter_contents)
 
         chapter_info[chapter_id] = {"chapter_name": chapter_name,
                                     "chapter_number": i,
+                                    "search_filename": full_filename,
                                     "full_chapter_id": full_chapter_id,
                                     "chapter_txt": chapter_file}
 
