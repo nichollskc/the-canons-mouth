@@ -4,7 +4,7 @@ rule download_file:
     output:
         out="texts/raw/{name}.{ext}",
     params:
-        url=lambda wildcards: config['texts'][wildcards.name]['urls'][wildcards.ext]
+        url=lambda wildcards: config['texts_urls'][wildcards.name]['urls'][wildcards.ext]
     shell:
         "wget -O {output.out} {params.url}"
 
@@ -24,22 +24,25 @@ rule txt_to_searchable:
         txt="texts/raw/{name}.txt",
     output:
         txt="texts/search/{name}.txt",
+        chapters="texts/chapters/{name}.json",
     run:
         import process_texts as pt
-        pt.process_txt_for_search(input.txt, output.txt)
+        pt.process_txt_for_search(input.txt, output.txt, output.chapters)
 
 rule txt_to_html:
     input:
-        txt="texts/raw/{name}.txt",
+        txt="texts/search/{name}.txt",
         template="texts/text_template.html",
+        chapters="texts/chapters/{name}.json",
     output:
         html="../frontend/public/texts/{name}.html",
     run:
         import process_texts as pt
-        pt.make_html_with_anchors(input.txt,
-                                  config['texts'][wildcards.name]['full_name'],
-                                  input.template,
-                                  output.html)
+        pt.make_html_with_anchors_all_chapters(input.txt,
+                                               config['texts'][wildcards.name]['full_name'],
+                                               input.template,
+                                               output.html,
+                                               input.chapters)
 
 rule txt_trim:
     input:
@@ -53,7 +56,7 @@ rule add_sentence_breaks_chapters:
     input:
         txt="texts/search/{name}.txt",
     output:
-        chapters="texts/chapters/{name}.json",
+        chapters="texts/chapter_starts/{name}.json",
         txt="texts/tokenized/{name}.txt",
     run:
         import process_texts as pt
@@ -76,9 +79,9 @@ rule all_js:
 rule all_texts:
     input:
         expand("texts/raw/{name}.html",
-               name=config['texts'].keys()),
+               name=config['texts_urls'].keys()),
         expand("texts/{folder}/{name}.txt",
-               folder=['search', 'raw', 'tokenized', 'small/tokenized'],
+               folder=['search', 'raw'],
                name=config['texts'].keys()),
         expand("../frontend/public/texts/{name}.html",
                name=config['texts'].keys()),

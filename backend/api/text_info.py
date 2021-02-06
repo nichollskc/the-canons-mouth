@@ -13,7 +13,7 @@ def construct_text_info_dict():
         text_dict["search_filename"] = SEARCH_DIR + text_id + ".txt"
 
         try:
-            with open(f"./texts/chapters/{text_id}.json", 'r') as f:
+            with open(f"backend/texts/chapters/{text_id}.json", 'r') as f:
                 chapter_starts = json.load(f)
         except FileNotFoundError:
             chapter_starts = []

@@ -3,6 +3,8 @@ import re
 
 import nltk
 
+import utils
+
 def txt_to_text_export(name, txtfile, outfile):
     header = [f"const text_{name} = `\n"]
     footer = ["`\n",
@@ -57,7 +59,7 @@ def json_dumps_unquote(obj, *args, **kwargs):
     s = s.replace('@@"', '')
     return s
 
-def process_txt_for_search(txtfile, outfile):
+def process_txt_for_search(txtfile, outfile, chapters_info_file):
     with open(txtfile, 'r') as f:
         lines = f.readlines()
 
@@ -65,6 +67,40 @@ def process_txt_for_search(txtfile, outfile):
 
     with open(outfile, 'w') as f:
         f.writelines(kept_lines)
+
+    joined = ''.join(kept_lines)
+    chapters = re.split(r'<<CHAPTER::(.*)>>', joined)
+
+    num_chapters = int(len(chapters)/2)
+    chapter_info = {}
+    for i in range(num_chapters):
+        chapter_name = chapters[i*2 + 1]
+        chapter_contents = chapters[i*2 + 2]
+
+        chapter_id = utils.slugify(chapter_name)
+        chapter_file = outfile.replace('.txt', '___' + chapter_id + '.txt')
+        with open(chapter_file, 'w') as f:
+            f.write(chapter_contents)
+
+        chapter_info[chapter_id] = {"chapter_name": chapter_name,
+                                    "chapter_number": i,
+                                    "chapter_txt": chapter_file}
+
+    with open(chapters_info_file, 'w') as f:
+        json.dump(chapter_info, f, indent=2)
+
+def make_html_with_anchors_all_chapters(txtfile, title, template_file, outfile, chapters_info_file):
+    make_html_with_anchors(txtfile, title, template_file, outfile)
+
+    with open(chapters_info_file, 'r') as f:
+        chapters = json.load(f)
+
+    for chapter_id, chapter_info in chapters.items():
+        txt_chapter = txtfile.replace('.txt', '___' + chapter_id + '.txt')
+        html_chapter = outfile.replace('.html', '___' + chapter_id + '.html')
+        title_chapter = title + ": " + chapter_info["chapter_name"]
+
+        make_html_with_anchors(txt_chapter, title_chapter, template_file, html_chapter)
 
 def make_html_with_anchors(txtfile, title, template_file, outfile):
     with open(txtfile, 'r') as f:
