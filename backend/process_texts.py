@@ -18,8 +18,11 @@ def txt_to_text_export(name, txtfile, outfile):
     with open(outfile, 'w') as f:
         f.writelines(all_lines)
 
+def accept_line(line, commented='####'):
+    return not line.startswith(commented)
+
 def trim_txt(lines, commented='####'):
-    return [line for line in lines if not line.startswith(commented)]
+    return [line for line in lines if accept_line(line, commented)]
 
 def write_text_prop_dict_js(config, outfile):
     import_strs = []
@@ -63,10 +66,48 @@ def process_txt_for_search(txtfile, outfile):
     with open(outfile, 'w') as f:
         f.writelines(kept_lines)
 
-def add_sentence_breaks(txtfile, with_breaks):
+def make_html_with_anchors(txtfile, title, template_file, outfile):
     with open(txtfile, 'r') as f:
-        contents = f.read()
+        lines = f.read().split('\n')
 
+    with open(template_file, 'r') as f:
+        template = f.read()
+
+    all_html_lines = []
+    line_number = 0
+    for line in lines:
+        if accept_line(line):
+            html = f"<a id='line_{line_number}'>{line}</a>"
+            all_html_lines.append(html)
+            line_number += 1
+
+    contents = '\n'.join(all_html_lines)
+    all_html = template.format(contents=contents, title=title)
+
+    with open(outfile, 'w') as f:
+        f.write(all_html)
+
+def extract_chapter_markers(txtfile, chapter_file):
+    with open(txtfile, 'r') as f:
+        lines = f.readlines()
+
+    chapter_starts = []
+    fixed_lines = []
+
+    for line_number, line in enumerate(lines):
+        match = re.match(r'<<CHAPTER::(.*)>>', line)
+        if match:
+            chapter_starts.append([line_number, match[1]])
+            line = re.sub(r'<<CHAPTER::.*>>', '', line)
+
+        fixed_lines.append(line)
+
+    with open(chapter_file, 'w') as f:
+        json.dump(chapter_starts, f, indent=2)
+
+    return fixed_lines
+
+def add_sentence_breaks(contents, with_breaks):
     sentence_boundaries = nltk.PunktSentenceTokenizer().span_tokenize(contents)
 
     with open(with_breaks, 'w') as f:
@@ -74,7 +115,7 @@ def add_sentence_breaks(txtfile, with_breaks):
         for (start, end) in sentence_boundaries:
             sentence = contents[last_start:start]
             f.write(re.sub(r'(\n\n\s*)', r'\1<<STOP>>', sentence) + "<<STOP>>")
-            (last_start, last_end) = (start, end)
+            (last_start, _last_end) = (start, end)
 
         sentence = contents[last_start:]
         f.write(re.sub(r'(\n\n\s*)', r'\1<<STOP>>', sentence))
