@@ -7,6 +7,6 @@ FILENAMES="${@:4}"
 
 for fname in $FILENAMES
 do
-    bash backend/api/exact_match.sh $PATTERN $fname $MAX_MATCH_INDEX $IGNORECASEARG
+    bash backend/api/exact_match.sh "$PATTERN" "$fname" $MAX_MATCH_INDEX $IGNORECASEARG
 done
 
