@@ -13,8 +13,7 @@ Then commit changes to frontend/build/
 
 * Find Gutenberg page and put URLS into backend/config.json
 * Add second entry in second list in backend/config.json
-* conda activate spyglass && snakemake -j1 all_texts
-* Add entry to frontend/src/texts.js (this used to be a snakemake command)
+* conda activate spyglass && snakemake -j1 update_texts
 * cd frontend && npm install && npm run build
 * Commit changes to frontend/build, push
 * In pythonanywhere terminal, git fetch && git pull && touch /var/www/halflistening_pythonanywhere_com_wsgi.py

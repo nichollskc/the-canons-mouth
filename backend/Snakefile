@@ -76,7 +76,7 @@ rule all_js:
                name=config['texts'].keys()),
         texts="../frontend/src/texts.js",
 
-rule all_texts:
+rule update_texts:
     input:
         expand("texts/raw/{name}.html",
                name=config['texts_urls'].keys()),
@@ -85,3 +85,4 @@ rule all_texts:
                name=config['texts'].keys()),
         expand("../frontend/public/texts/{name}.html",
                name=config['texts'].keys()),
+        js="../frontend/src/texts.js"
