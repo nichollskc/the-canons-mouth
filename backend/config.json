@@ -77,6 +77,13 @@
         "html": "http://www.gutenberg.org/cache/epub/58/pg58.html"
       }
     },
+    "gibbons": {
+      "full_name": "Gibbon's Decline and Fall of the Roman Empire",
+      "urls": {
+        "txt": "https://www.gutenberg.org/files/25717/25717-0.txt",
+        "html": "https://www.gutenberg.org/files/25717/25717-h/25717-h.htm"
+      }
+    },
     "mabinogion": {
       "full_name": "Lady Charlotte Guest's Mabinogion",
       "urls": {
@@ -128,6 +135,10 @@
     },
     "mabinogion": {
       "full_name": "Lady Charlotte Guest's Mabinogion",
+      "startsChecked": true
+    },
+    "gibbons": {
+      "full_name": "Gibbon's Decline and Fall of the Roman Empire",
       "startsChecked": true
     }
   }
