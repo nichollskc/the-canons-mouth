@@ -12,6 +12,7 @@ Then commit changes to frontend/build/
 # Adding a new text
 
 * Find Gutenberg page and put URLS into backend/config.json
+* Add any chapter markers into the text (manually in e.g. backend/texts/raw/gibbons.txt)
 * Add second entry in second list in backend/config.json
 * conda activate spyglass && snakemake -j1 update_texts
 * cd frontend && npm install && npm run build
