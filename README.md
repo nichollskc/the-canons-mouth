@@ -9,6 +9,16 @@ npm install
 npm run build
 Then commit changes to frontend/build/
 
+# Adding a new text
+
+* Find Gutenberg page and put URLS into backend/config.json
+* Add second entry in second list in backend/config.json
+* conda activate spyglass && snakemake -j1 all_texts
+* Add entry to frontend/src/texts.js (this used to be a snakemake command)
+* cd frontend && npm install && npm run build
+* Commit changes to frontend/build, push
+* In pythonanywhere terminal, git fetch && git pull && touch /var/www/halflistening_pythonanywhere_com_wsgi.py
+
 # Profile
 
 Using code in backend/api/profile.py (after deleting the import routes line from __init__)
