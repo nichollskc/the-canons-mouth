@@ -64,6 +64,12 @@ const texts = [
     "full_name": "Lady Charlotte Guest's Mabinogion",
     "checkbox_key": "checkbox_mabinogion",
     "startsChecked": true
+  },
+  {
+    "name": "gibbons",
+    "full_name": "Gibbon's Decline and Fall of the Roman Empire",
+    "checkbox_key": "checkbox_gibbons",
+    "startsChecked": true
   }
 ];
 
