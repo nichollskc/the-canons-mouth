@@ -1,1 +1,499 @@
-{}
+{
+  "chapter-i": {
+    "chapter_name": "Chapter I",
+    "chapter_number": 0,
+    "search_filename": "backend/texts/search/gibbons___chapter-i.txt",
+    "full_chapter_id": "gibbons___chapter-i",
+    "chapter_txt": "texts/search/gibbons___chapter-i.txt"
+  },
+  "chapter-ii": {
+    "chapter_name": "Chapter II",
+    "chapter_number": 1,
+    "search_filename": "backend/texts/search/gibbons___chapter-ii.txt",
+    "full_chapter_id": "gibbons___chapter-ii",
+    "chapter_txt": "texts/search/gibbons___chapter-ii.txt"
+  },
+  "chapter-iii": {
+    "chapter_name": "Chapter III",
+    "chapter_number": 2,
+    "search_filename": "backend/texts/search/gibbons___chapter-iii.txt",
+    "full_chapter_id": "gibbons___chapter-iii",
+    "chapter_txt": "texts/search/gibbons___chapter-iii.txt"
+  },
+  "chapter-iv": {
+    "chapter_name": "Chapter IV",
+    "chapter_number": 3,
+    "search_filename": "backend/texts/search/gibbons___chapter-iv.txt",
+    "full_chapter_id": "gibbons___chapter-iv",
+    "chapter_txt": "texts/search/gibbons___chapter-iv.txt"
+  },
+  "chapter-v": {
+    "chapter_name": "Chapter V",
+    "chapter_number": 4,
+    "search_filename": "backend/texts/search/gibbons___chapter-v.txt",
+    "full_chapter_id": "gibbons___chapter-v",
+    "chapter_txt": "texts/search/gibbons___chapter-v.txt"
+  },
+  "chapter-vi": {
+    "chapter_name": "Chapter VI",
+    "chapter_number": 5,
+    "search_filename": "backend/texts/search/gibbons___chapter-vi.txt",
+    "full_chapter_id": "gibbons___chapter-vi",
+    "chapter_txt": "texts/search/gibbons___chapter-vi.txt"
+  },
+  "chapter-vii": {
+    "chapter_name": "Chapter VII",
+    "chapter_number": 6,
+    "search_filename": "backend/texts/search/gibbons___chapter-vii.txt",
+    "full_chapter_id": "gibbons___chapter-vii",
+    "chapter_txt": "texts/search/gibbons___chapter-vii.txt"
+  },
+  "chapter-viii": {
+    "chapter_name": "Chapter VIII",
+    "chapter_number": 7,
+    "search_filename": "backend/texts/search/gibbons___chapter-viii.txt",
+    "full_chapter_id": "gibbons___chapter-viii",
+    "chapter_txt": "texts/search/gibbons___chapter-viii.txt"
+  },
+  "chapter-ix": {
+    "chapter_name": "Chapter IX",
+    "chapter_number": 8,
+    "search_filename": "backend/texts/search/gibbons___chapter-ix.txt",
+    "full_chapter_id": "gibbons___chapter-ix",
+    "chapter_txt": "texts/search/gibbons___chapter-ix.txt"
+  },
+  "chapter-x": {
+    "chapter_name": "Chapter X",
+    "chapter_number": 9,
+    "search_filename": "backend/texts/search/gibbons___chapter-x.txt",
+    "full_chapter_id": "gibbons___chapter-x",
+    "chapter_txt": "texts/search/gibbons___chapter-x.txt"
+  },
+  "chapter-xi": {
+    "chapter_name": "Chapter XI",
+    "chapter_number": 11,
+    "search_filename": "backend/texts/search/gibbons___chapter-xi.txt",
+    "full_chapter_id": "gibbons___chapter-xi",
+    "chapter_txt": "texts/search/gibbons___chapter-xi.txt"
+  },
+  "chapter-xii": {
+    "chapter_name": "Chapter XII",
+    "chapter_number": 12,
+    "search_filename": "backend/texts/search/gibbons___chapter-xii.txt",
+    "full_chapter_id": "gibbons___chapter-xii",
+    "chapter_txt": "texts/search/gibbons___chapter-xii.txt"
+  },
+  "chapter-xiii": {
+    "chapter_name": "Chapter XIII",
+    "chapter_number": 13,
+    "search_filename": "backend/texts/search/gibbons___chapter-xiii.txt",
+    "full_chapter_id": "gibbons___chapter-xiii",
+    "chapter_txt": "texts/search/gibbons___chapter-xiii.txt"
+  },
+  "chapter-xiv": {
+    "chapter_name": "Chapter XIV",
+    "chapter_number": 14,
+    "search_filename": "backend/texts/search/gibbons___chapter-xiv.txt",
+    "full_chapter_id": "gibbons___chapter-xiv",
+    "chapter_txt": "texts/search/gibbons___chapter-xiv.txt"
+  },
+  "chapter-xv": {
+    "chapter_name": "Chapter XV",
+    "chapter_number": 15,
+    "search_filename": "backend/texts/search/gibbons___chapter-xv.txt",
+    "full_chapter_id": "gibbons___chapter-xv",
+    "chapter_txt": "texts/search/gibbons___chapter-xv.txt"
+  },
+  "chapter-xvi": {
+    "chapter_name": "Chapter XVI",
+    "chapter_number": 16,
+    "search_filename": "backend/texts/search/gibbons___chapter-xvi.txt",
+    "full_chapter_id": "gibbons___chapter-xvi",
+    "chapter_txt": "texts/search/gibbons___chapter-xvi.txt"
+  },
+  "chapter-xvii": {
+    "chapter_name": "Chapter XVII",
+    "chapter_number": 17,
+    "search_filename": "backend/texts/search/gibbons___chapter-xvii.txt",
+    "full_chapter_id": "gibbons___chapter-xvii",
+    "chapter_txt": "texts/search/gibbons___chapter-xvii.txt"
+  },
+  "chapter-xviii": {
+    "chapter_name": "Chapter XVIII",
+    "chapter_number": 18,
+    "search_filename": "backend/texts/search/gibbons___chapter-xviii.txt",
+    "full_chapter_id": "gibbons___chapter-xviii",
+    "chapter_txt": "texts/search/gibbons___chapter-xviii.txt"
+  },
+  "chapter-xix": {
+    "chapter_name": "Chapter XIX",
+    "chapter_number": 19,
+    "search_filename": "backend/texts/search/gibbons___chapter-xix.txt",
+    "full_chapter_id": "gibbons___chapter-xix",
+    "chapter_txt": "texts/search/gibbons___chapter-xix.txt"
+  },
+  "chapter-xx": {
+    "chapter_name": "Chapter XX",
+    "chapter_number": 20,
+    "search_filename": "backend/texts/search/gibbons___chapter-xx.txt",
+    "full_chapter_id": "gibbons___chapter-xx",
+    "chapter_txt": "texts/search/gibbons___chapter-xx.txt"
+  },
+  "chapter-xxi": {
+    "chapter_name": "Chapter XXI",
+    "chapter_number": 21,
+    "search_filename": "backend/texts/search/gibbons___chapter-xxi.txt",
+    "full_chapter_id": "gibbons___chapter-xxi",
+    "chapter_txt": "texts/search/gibbons___chapter-xxi.txt"
+  },
+  "chapter-xxii": {
+    "chapter_name": "Chapter XXII",
+    "chapter_number": 22,
+    "search_filename": "backend/texts/search/gibbons___chapter-xxii.txt",
+    "full_chapter_id": "gibbons___chapter-xxii",
+    "chapter_txt": "texts/search/gibbons___chapter-xxii.txt"
+  },
+  "chapter-xxiii": {
+    "chapter_name": "Chapter XXIII",
+    "chapter_number": 23,
+    "search_filename": "backend/texts/search/gibbons___chapter-xxiii.txt",
+    "full_chapter_id": "gibbons___chapter-xxiii",
+    "chapter_txt": "texts/search/gibbons___chapter-xxiii.txt"
+  },
+  "chapter-xxiv": {
+    "chapter_name": "Chapter XXIV",
+    "chapter_number": 24,
+    "search_filename": "backend/texts/search/gibbons___chapter-xxiv.txt",
+    "full_chapter_id": "gibbons___chapter-xxiv",
+    "chapter_txt": "texts/search/gibbons___chapter-xxiv.txt"
+  },
+  "chapter-xxv": {
+    "chapter_name": "Chapter XXV",
+    "chapter_number": 25,
+    "search_filename": "backend/texts/search/gibbons___chapter-xxv.txt",
+    "full_chapter_id": "gibbons___chapter-xxv",
+    "chapter_txt": "texts/search/gibbons___chapter-xxv.txt"
+  },
+  "chapter-xxvi": {
+    "chapter_name": "Chapter XXVI",
+    "chapter_number": 26,
+    "search_filename": "backend/texts/search/gibbons___chapter-xxvi.txt",
+    "full_chapter_id": "gibbons___chapter-xxvi",
+    "chapter_txt": "texts/search/gibbons___chapter-xxvi.txt"
+  },
+  "chapter-xxvii": {
+    "chapter_name": "Chapter XXVII",
+    "chapter_number": 27,
+    "search_filename": "backend/texts/search/gibbons___chapter-xxvii.txt",
+    "full_chapter_id": "gibbons___chapter-xxvii",
+    "chapter_txt": "texts/search/gibbons___chapter-xxvii.txt"
+  },
+  "chapter-xxviii": {
+    "chapter_name": "Chapter XXVIII",
+    "chapter_number": 28,
+    "search_filename": "backend/texts/search/gibbons___chapter-xxviii.txt",
+    "full_chapter_id": "gibbons___chapter-xxviii",
+    "chapter_txt": "texts/search/gibbons___chapter-xxviii.txt"
+  },
+  "chapter-xxix": {
+    "chapter_name": "Chapter XXIX",
+    "chapter_number": 29,
+    "search_filename": "backend/texts/search/gibbons___chapter-xxix.txt",
+    "full_chapter_id": "gibbons___chapter-xxix",
+    "chapter_txt": "texts/search/gibbons___chapter-xxix.txt"
+  },
+  "chapter-xxx": {
+    "chapter_name": "Chapter XXX",
+    "chapter_number": 30,
+    "search_filename": "backend/texts/search/gibbons___chapter-xxx.txt",
+    "full_chapter_id": "gibbons___chapter-xxx",
+    "chapter_txt": "texts/search/gibbons___chapter-xxx.txt"
+  },
+  "chapter-xxxi": {
+    "chapter_name": "Chapter XXXI",
+    "chapter_number": 31,
+    "search_filename": "backend/texts/search/gibbons___chapter-xxxi.txt",
+    "full_chapter_id": "gibbons___chapter-xxxi",
+    "chapter_txt": "texts/search/gibbons___chapter-xxxi.txt"
+  },
+  "chapter-xxxii": {
+    "chapter_name": "Chapter XXXII",
+    "chapter_number": 32,
+    "search_filename": "backend/texts/search/gibbons___chapter-xxxii.txt",
+    "full_chapter_id": "gibbons___chapter-xxxii",
+    "chapter_txt": "texts/search/gibbons___chapter-xxxii.txt"
+  },
+  "chapter-xxxiii": {
+    "chapter_name": "Chapter XXXIII",
+    "chapter_number": 33,
+    "search_filename": "backend/texts/search/gibbons___chapter-xxxiii.txt",
+    "full_chapter_id": "gibbons___chapter-xxxiii",
+    "chapter_txt": "texts/search/gibbons___chapter-xxxiii.txt"
+  },
+  "chapter-xxxiv": {
+    "chapter_name": "Chapter XXXIV",
+    "chapter_number": 34,
+    "search_filename": "backend/texts/search/gibbons___chapter-xxxiv.txt",
+    "full_chapter_id": "gibbons___chapter-xxxiv",
+    "chapter_txt": "texts/search/gibbons___chapter-xxxiv.txt"
+  },
+  "chapter-xxxv": {
+    "chapter_name": "Chapter XXXV",
+    "chapter_number": 35,
+    "search_filename": "backend/texts/search/gibbons___chapter-xxxv.txt",
+    "full_chapter_id": "gibbons___chapter-xxxv",
+    "chapter_txt": "texts/search/gibbons___chapter-xxxv.txt"
+  },
+  "chapter-xxxvi": {
+    "chapter_name": "Chapter XXXVI",
+    "chapter_number": 36,
+    "search_filename": "backend/texts/search/gibbons___chapter-xxxvi.txt",
+    "full_chapter_id": "gibbons___chapter-xxxvi",
+    "chapter_txt": "texts/search/gibbons___chapter-xxxvi.txt"
+  },
+  "chapter-xxxvii": {
+    "chapter_name": "Chapter XXXVII",
+    "chapter_number": 37,
+    "search_filename": "backend/texts/search/gibbons___chapter-xxxvii.txt",
+    "full_chapter_id": "gibbons___chapter-xxxvii",
+    "chapter_txt": "texts/search/gibbons___chapter-xxxvii.txt"
+  },
+  "chapter-xxxviii": {
+    "chapter_name": "Chapter XXXVIII",
+    "chapter_number": 38,
+    "search_filename": "backend/texts/search/gibbons___chapter-xxxviii.txt",
+    "full_chapter_id": "gibbons___chapter-xxxviii",
+    "chapter_txt": "texts/search/gibbons___chapter-xxxviii.txt"
+  },
+  "chapter-xxxix": {
+    "chapter_name": "Chapter XXXIX",
+    "chapter_number": 39,
+    "search_filename": "backend/texts/search/gibbons___chapter-xxxix.txt",
+    "full_chapter_id": "gibbons___chapter-xxxix",
+    "chapter_txt": "texts/search/gibbons___chapter-xxxix.txt"
+  },
+  "chapter-xl": {
+    "chapter_name": "Chapter XL",
+    "chapter_number": 40,
+    "search_filename": "backend/texts/search/gibbons___chapter-xl.txt",
+    "full_chapter_id": "gibbons___chapter-xl",
+    "chapter_txt": "texts/search/gibbons___chapter-xl.txt"
+  },
+  "chapter-xli": {
+    "chapter_name": "Chapter XLI",
+    "chapter_number": 41,
+    "search_filename": "backend/texts/search/gibbons___chapter-xli.txt",
+    "full_chapter_id": "gibbons___chapter-xli",
+    "chapter_txt": "texts/search/gibbons___chapter-xli.txt"
+  },
+  "chapter-xlii": {
+    "chapter_name": "Chapter XLII",
+    "chapter_number": 42,
+    "search_filename": "backend/texts/search/gibbons___chapter-xlii.txt",
+    "full_chapter_id": "gibbons___chapter-xlii",
+    "chapter_txt": "texts/search/gibbons___chapter-xlii.txt"
+  },
+  "chapter-xliii": {
+    "chapter_name": "Chapter XLIII",
+    "chapter_number": 43,
+    "search_filename": "backend/texts/search/gibbons___chapter-xliii.txt",
+    "full_chapter_id": "gibbons___chapter-xliii",
+    "chapter_txt": "texts/search/gibbons___chapter-xliii.txt"
+  },
+  "chapter-xliv": {
+    "chapter_name": "Chapter XLIV",
+    "chapter_number": 44,
+    "search_filename": "backend/texts/search/gibbons___chapter-xliv.txt",
+    "full_chapter_id": "gibbons___chapter-xliv",
+    "chapter_txt": "texts/search/gibbons___chapter-xliv.txt"
+  },
+  "chapter-xlv": {
+    "chapter_name": "Chapter XLV",
+    "chapter_number": 45,
+    "search_filename": "backend/texts/search/gibbons___chapter-xlv.txt",
+    "full_chapter_id": "gibbons___chapter-xlv",
+    "chapter_txt": "texts/search/gibbons___chapter-xlv.txt"
+  },
+  "chapter-xlvi": {
+    "chapter_name": "Chapter XLVI",
+    "chapter_number": 46,
+    "search_filename": "backend/texts/search/gibbons___chapter-xlvi.txt",
+    "full_chapter_id": "gibbons___chapter-xlvi",
+    "chapter_txt": "texts/search/gibbons___chapter-xlvi.txt"
+  },
+  "chapter-xlvii": {
+    "chapter_name": "Chapter XLVII",
+    "chapter_number": 47,
+    "search_filename": "backend/texts/search/gibbons___chapter-xlvii.txt",
+    "full_chapter_id": "gibbons___chapter-xlvii",
+    "chapter_txt": "texts/search/gibbons___chapter-xlvii.txt"
+  },
+  "chapter-xlviii": {
+    "chapter_name": "Chapter XLVIII",
+    "chapter_number": 48,
+    "search_filename": "backend/texts/search/gibbons___chapter-xlviii.txt",
+    "full_chapter_id": "gibbons___chapter-xlviii",
+    "chapter_txt": "texts/search/gibbons___chapter-xlviii.txt"
+  },
+  "chapter-xlix": {
+    "chapter_name": "Chapter XLIX",
+    "chapter_number": 49,
+    "search_filename": "backend/texts/search/gibbons___chapter-xlix.txt",
+    "full_chapter_id": "gibbons___chapter-xlix",
+    "chapter_txt": "texts/search/gibbons___chapter-xlix.txt"
+  },
+  "chapter-l": {
+    "chapter_name": "Chapter L",
+    "chapter_number": 50,
+    "search_filename": "backend/texts/search/gibbons___chapter-l.txt",
+    "full_chapter_id": "gibbons___chapter-l",
+    "chapter_txt": "texts/search/gibbons___chapter-l.txt"
+  },
+  "chapter-li": {
+    "chapter_name": "Chapter LI",
+    "chapter_number": 51,
+    "search_filename": "backend/texts/search/gibbons___chapter-li.txt",
+    "full_chapter_id": "gibbons___chapter-li",
+    "chapter_txt": "texts/search/gibbons___chapter-li.txt"
+  },
+  "chapter-lii": {
+    "chapter_name": "Chapter LII",
+    "chapter_number": 52,
+    "search_filename": "backend/texts/search/gibbons___chapter-lii.txt",
+    "full_chapter_id": "gibbons___chapter-lii",
+    "chapter_txt": "texts/search/gibbons___chapter-lii.txt"
+  },
+  "chapter-liii": {
+    "chapter_name": "Chapter LIII",
+    "chapter_number": 53,
+    "search_filename": "backend/texts/search/gibbons___chapter-liii.txt",
+    "full_chapter_id": "gibbons___chapter-liii",
+    "chapter_txt": "texts/search/gibbons___chapter-liii.txt"
+  },
+  "chapter-liv": {
+    "chapter_name": "Chapter LIV",
+    "chapter_number": 54,
+    "search_filename": "backend/texts/search/gibbons___chapter-liv.txt",
+    "full_chapter_id": "gibbons___chapter-liv",
+    "chapter_txt": "texts/search/gibbons___chapter-liv.txt"
+  },
+  "chapter-lv": {
+    "chapter_name": "Chapter LV",
+    "chapter_number": 55,
+    "search_filename": "backend/texts/search/gibbons___chapter-lv.txt",
+    "full_chapter_id": "gibbons___chapter-lv",
+    "chapter_txt": "texts/search/gibbons___chapter-lv.txt"
+  },
+  "chapter-lvi": {
+    "chapter_name": "Chapter LVI",
+    "chapter_number": 56,
+    "search_filename": "backend/texts/search/gibbons___chapter-lvi.txt",
+    "full_chapter_id": "gibbons___chapter-lvi",
+    "chapter_txt": "texts/search/gibbons___chapter-lvi.txt"
+  },
+  "chapter-lvii": {
+    "chapter_name": "Chapter LVII",
+    "chapter_number": 57,
+    "search_filename": "backend/texts/search/gibbons___chapter-lvii.txt",
+    "full_chapter_id": "gibbons___chapter-lvii",
+    "chapter_txt": "texts/search/gibbons___chapter-lvii.txt"
+  },
+  "chapter-lviii": {
+    "chapter_name": "Chapter LVIII",
+    "chapter_number": 58,
+    "search_filename": "backend/texts/search/gibbons___chapter-lviii.txt",
+    "full_chapter_id": "gibbons___chapter-lviii",
+    "chapter_txt": "texts/search/gibbons___chapter-lviii.txt"
+  },
+  "chapter-lix": {
+    "chapter_name": "Chapter LIX",
+    "chapter_number": 59,
+    "search_filename": "backend/texts/search/gibbons___chapter-lix.txt",
+    "full_chapter_id": "gibbons___chapter-lix",
+    "chapter_txt": "texts/search/gibbons___chapter-lix.txt"
+  },
+  "chapter-lx": {
+    "chapter_name": "Chapter LX",
+    "chapter_number": 60,
+    "search_filename": "backend/texts/search/gibbons___chapter-lx.txt",
+    "full_chapter_id": "gibbons___chapter-lx",
+    "chapter_txt": "texts/search/gibbons___chapter-lx.txt"
+  },
+  "chapter-lxi": {
+    "chapter_name": "Chapter LXI",
+    "chapter_number": 61,
+    "search_filename": "backend/texts/search/gibbons___chapter-lxi.txt",
+    "full_chapter_id": "gibbons___chapter-lxi",
+    "chapter_txt": "texts/search/gibbons___chapter-lxi.txt"
+  },
+  "chapter-lxii": {
+    "chapter_name": "Chapter LXII",
+    "chapter_number": 62,
+    "search_filename": "backend/texts/search/gibbons___chapter-lxii.txt",
+    "full_chapter_id": "gibbons___chapter-lxii",
+    "chapter_txt": "texts/search/gibbons___chapter-lxii.txt"
+  },
+  "chapter-lxiii": {
+    "chapter_name": "Chapter LXIII",
+    "chapter_number": 63,
+    "search_filename": "backend/texts/search/gibbons___chapter-lxiii.txt",
+    "full_chapter_id": "gibbons___chapter-lxiii",
+    "chapter_txt": "texts/search/gibbons___chapter-lxiii.txt"
+  },
+  "chapter-lxiv": {
+    "chapter_name": "Chapter LXIV",
+    "chapter_number": 64,
+    "search_filename": "backend/texts/search/gibbons___chapter-lxiv.txt",
+    "full_chapter_id": "gibbons___chapter-lxiv",
+    "chapter_txt": "texts/search/gibbons___chapter-lxiv.txt"
+  },
+  "chapter-lxv": {
+    "chapter_name": "Chapter LXV",
+    "chapter_number": 65,
+    "search_filename": "backend/texts/search/gibbons___chapter-lxv.txt",
+    "full_chapter_id": "gibbons___chapter-lxv",
+    "chapter_txt": "texts/search/gibbons___chapter-lxv.txt"
+  },
+  "chapter-lxvi": {
+    "chapter_name": "Chapter LXVI",
+    "chapter_number": 66,
+    "search_filename": "backend/texts/search/gibbons___chapter-lxvi.txt",
+    "full_chapter_id": "gibbons___chapter-lxvi",
+    "chapter_txt": "texts/search/gibbons___chapter-lxvi.txt"
+  },
+  "chapter-lxvii": {
+    "chapter_name": "Chapter LXVII",
+    "chapter_number": 67,
+    "search_filename": "backend/texts/search/gibbons___chapter-lxvii.txt",
+    "full_chapter_id": "gibbons___chapter-lxvii",
+    "chapter_txt": "texts/search/gibbons___chapter-lxvii.txt"
+  },
+  "chapter-lxviii": {
+    "chapter_name": "Chapter LXVIII",
+    "chapter_number": 68,
+    "search_filename": "backend/texts/search/gibbons___chapter-lxviii.txt",
+    "full_chapter_id": "gibbons___chapter-lxviii",
+    "chapter_txt": "texts/search/gibbons___chapter-lxviii.txt"
+  },
+  "chapter-lxix": {
+    "chapter_name": "Chapter LXIX",
+    "chapter_number": 69,
+    "search_filename": "backend/texts/search/gibbons___chapter-lxix.txt",
+    "full_chapter_id": "gibbons___chapter-lxix",
+    "chapter_txt": "texts/search/gibbons___chapter-lxix.txt"
+  },
+  "chapter-lxx": {
+    "chapter_name": "Chapter LXX",
+    "chapter_number": 70,
+    "search_filename": "backend/texts/search/gibbons___chapter-lxx.txt",
+    "full_chapter_id": "gibbons___chapter-lxx",
+    "chapter_txt": "texts/search/gibbons___chapter-lxx.txt"
+  },
+  "chapter-lxxi": {
+    "chapter_name": "Chapter LXXI",
+    "chapter_number": 71,
+    "search_filename": "backend/texts/search/gibbons___chapter-lxxi.txt",
+    "full_chapter_id": "gibbons___chapter-lxxi",
+    "chapter_txt": "texts/search/gibbons___chapter-lxxi.txt"
+  }
+}
