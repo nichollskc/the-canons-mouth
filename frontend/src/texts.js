@@ -3,13 +3,13 @@ const texts = [
     "name": "malory",
     "full_name": "Malory",
     "checkbox_key": "checkbox_malory",
-    "startsChecked": true
+    "startsChecked": false
   },
   {
     "name": "shakespeare",
     "full_name": "Shakespeare full works",
     "checkbox_key": "checkbox_shakespeare",
-    "startsChecked": true
+    "startsChecked": false
   },
   {
     "name": "idylls_king",
@@ -27,7 +27,7 @@ const texts = [
     "name": "bible",
     "full_name": "King James Bible",
     "checkbox_key": "checkbox_bible",
-    "startsChecked": true
+    "startsChecked": false
   },
   {
     "name": "aeneid",
@@ -63,13 +63,49 @@ const texts = [
     "name": "mabinogion",
     "full_name": "Lady Charlotte Guest's Mabinogion",
     "checkbox_key": "checkbox_mabinogion",
+    "startsChecked": false
+  },
+  {
+    "name": "morris_aeneid",
+    "full_name": "The \u00c6neids of Virgil by William Morris",
+    "checkbox_key": "checkbox_morris_aeneid",
+    "startsChecked": true
+  },
+  {
+    "name": "lays_rome",
+    "full_name": "Lays of Ancient Rome",
+    "checkbox_key": "checkbox_lays_rome",
+    "startsChecked": true
+  },
+  {
+    "name": "keats",
+    "full_name": "Keats",
+    "checkbox_key": "checkbox_keats",
+    "startsChecked": true
+  },
+  {
+    "name": "keats_endymion",
+    "full_name": "Keats' Endymion",
+    "checkbox_key": "checkbox_keats_endymion",
+    "startsChecked": true
+  },
+  {
+    "name": "divine_comedy",
+    "full_name": "Longfellow: Dante",
+    "checkbox_key": "checkbox_divine_comedy",
+    "startsChecked": true
+  },
+  {
+    "name": "wordsworth",
+    "full_name": "Wordsworth Volume 3",
+    "checkbox_key": "checkbox_wordsworth",
     "startsChecked": true
   },
   {
     "name": "gibbons",
     "full_name": "Gibbon's Decline and Fall of the Roman Empire",
     "checkbox_key": "checkbox_gibbons",
-    "startsChecked": true
+    "startsChecked": false
   }
 ];
 
