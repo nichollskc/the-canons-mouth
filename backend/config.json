@@ -84,6 +84,48 @@
         "html": "https://www.gutenberg.org/files/25717/25717-h/25717-h.htm"
       }
     },
+    "morris_aeneid": {
+      "full_name": "The Æneids of Virgil by William Morris",
+      "urls": {
+        "txt": "https://www.gutenberg.org/files/29358/29358-8.txt",
+        "html": "https://www.gutenberg.org/files/29358/29358-h/29358-h.htm"
+      }
+    },
+    "lays_rome": {
+      "full_name": "Lays of Ancient Rome",
+      "urls": {
+        "txt": "https://www.gutenberg.org/files/847/847-8.txt",
+        "html": "https://www.gutenberg.org/files/847/847-h/847-h.htm"
+      }
+    },
+    "keats": {
+      "full_name": "Keats",
+      "urls": {
+        "txt": "https://www.gutenberg.org/files/23684/23684-8.txt",
+        "html": "https://www.gutenberg.org/files/23684/23684-h/23684-h.htm"
+      }
+    },
+    "keats_endymion": {
+      "full_name": "Keats' Endymion",
+      "urls": {
+        "txt": "https://www.gutenberg.org/files/24280/24280-0.txt",
+        "html": "https://www.gutenberg.org/files/24280/24280-h/24280-h.htm"
+      }
+    },
+    "divine_comedy": {
+      "full_name": "Longfellow: Dante",
+      "urls": {
+        "txt": "https://www.gutenberg.org/files/1004/1004-0.txt",
+        "html": "https://www.gutenberg.org/files/1004/1004-h/1004-h.htm"
+      }
+    },
+    "wordsworth": {
+      "full_name": "Wordsworth Volume 3",
+      "urls": {
+        "txt": "https://www.gutenberg.org/files/12383/12383-8.txt",
+        "html": "https://www.gutenberg.org/files/12383/12383-h/12383-h.htm"
+      }
+    },
     "mabinogion": {
       "full_name": "Lady Charlotte Guest's Mabinogion",
       "urls": {
@@ -135,6 +177,30 @@
     },
     "mabinogion": {
       "full_name": "Lady Charlotte Guest's Mabinogion",
+      "startsChecked": false
+    },
+    "morris_aeneid": {
+      "full_name": "The Æneids of Virgil by William Morris",
+      "startsChecked": true
+    },
+    "lays_rome": {
+      "full_name": "Lays of Ancient Rome",
+      "startsChecked": true
+    },
+    "keats": {
+      "full_name": "Keats",
+      "startsChecked": true
+    },
+    "keats_endymion": {
+      "full_name": "Keats' Endymion",
+      "startsChecked": true
+    },
+    "divine_comedy": {
+      "full_name": "Longfellow: Dante",
+      "startsChecked": true
+    },
+    "wordsworth": {
+      "full_name": "Wordsworth Volume 3",
       "startsChecked": true
     },
     "gibbons": {
