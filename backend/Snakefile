@@ -12,7 +12,7 @@ rule txt_to_jsx:
     input:
         txt="texts/raw/{name}.txt",
     output:
-        js="src/texts/{name}.js"
+        js="../frontend/src/texts/{name}.js"
     run:
         import process_texts as pt
         pt.txt_to_text_export(wildcards.name,
