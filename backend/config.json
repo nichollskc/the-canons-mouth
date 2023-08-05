@@ -137,11 +137,11 @@
   "texts": {
     "malory": {
       "full_name": "Malory",
-      "startsChecked": true
+      "startsChecked": false
     },
     "shakespeare": {
       "full_name": "Shakespeare full works",
-      "startsChecked": true
+      "startsChecked": false
     },
     "idylls_king": {
       "full_name": "Tennyson Idylls of the King",
@@ -153,7 +153,7 @@
     },
     "bible": {
       "full_name": "King James Bible",
-      "startsChecked": true
+      "startsChecked": false
     },
     "aeneid": {
       "full_name": "Dryden's Aeneid",
@@ -205,7 +205,7 @@
     },
     "gibbons": {
       "full_name": "Gibbon's Decline and Fall of the Roman Empire",
-      "startsChecked": true
+      "startsChecked": false
     }
   }
 }
