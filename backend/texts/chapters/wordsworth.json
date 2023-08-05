@@ -1,0 +1,30 @@
+{
+  "1804": {
+    "chapter_name": "1804",
+    "chapter_number": 0,
+    "search_filename": "backend/texts/search/wordsworth___1804.txt",
+    "full_chapter_id": "wordsworth___1804",
+    "chapter_txt": "texts/search/wordsworth___1804.txt"
+  },
+  "1805": {
+    "chapter_name": "1805",
+    "chapter_number": 1,
+    "search_filename": "backend/texts/search/wordsworth___1805.txt",
+    "full_chapter_id": "wordsworth___1805",
+    "chapter_txt": "texts/search/wordsworth___1805.txt"
+  },
+  "prelude": {
+    "chapter_name": "Prelude",
+    "chapter_number": 2,
+    "search_filename": "backend/texts/search/wordsworth___prelude.txt",
+    "full_chapter_id": "wordsworth___prelude",
+    "chapter_txt": "texts/search/wordsworth___prelude.txt"
+  },
+  "after-prelude": {
+    "chapter_name": "After Prelude",
+    "chapter_number": 3,
+    "search_filename": "backend/texts/search/wordsworth___after-prelude.txt",
+    "full_chapter_id": "wordsworth___after-prelude",
+    "chapter_txt": "texts/search/wordsworth___after-prelude.txt"
+  }
+}
